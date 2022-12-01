@@ -1,0 +1,49 @@
+//index
+#sectionMain {
+    min-height: rem(0);
+    .tit {
+        margin-bottom: rem(60);
+    }
+    .search {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: rem(40);
+        .search-wrap {
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: rem(20);
+            width: rem(560);
+            height: rem(60);
+            background: #fff;
+            padding: rem(8) rem(21) rem(8) rem(8);
+            .serch-input {
+                margin: rem(0) rem(10);
+                font-weight: 500;
+                color:#fff;
+                margin-right: auto;
+                color: #707070;
+            }
+            .ic-search {
+                cursor: pointer;
+                width: rem(24);
+                height: rem(24);
+                background-image: url('../img/ic-input-serch.png');
+            }
+        }
+    }
+    .cont-mid {
+        display:flex;
+        align-items: center;
+        .mid-left {
+            margin-right: auto;
+            .patch-list {
+                margin-bottom: rem(40);
+                .item {
+                    color: #707070;
+                }
+            }
+        }
+    }
+}

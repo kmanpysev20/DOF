@@ -1,0 +1,337 @@
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local("Pretendard Variable"), url(".//PretendardVariable.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Thin.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Black.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 9.375rem;
+  padding: 0 2.5rem;
+  z-index: 100;
+  background: #1a2316;
+}
+#header .header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 82.5rem;
+}
+#header .logo {
+  position: relative;
+  margin-right: 1.875rem;
+}
+#header .logo a {
+  display: block;
+  width: 6.875rem;
+  height: 4.625rem;
+  background: url("../img/logo.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#header .menu-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#header .menu-list .menu-btn a {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #FFF;
+}
+
+#wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.inner {
+  position: relative;
+  max-width: 82.5rem;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+#container {
+  flex-grow: 1;
+  padding-top: 9.375rem;
+  background-color: #1a2316;
+}
+
+.main-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 6.25rem 2.5rem;
+  text-align: center;
+}
+.main-section .contents {
+  display: block;
+  height: auto;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  height: 11.25rem;
+  padding: 2.5rem 2.5rem;
+  background-color: #1a2316;
+}
+#footer .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+#footer .inner .copy-logo {
+  margin-bottom: 0.625rem;
+}
+#footer .inner .copy-logo .ic-logo {
+  display: block;
+  width: 6.875rem;
+  height: 4.625rem;
+  background: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#footer .inner .copy-txt {
+  display: inline-block;
+  margin: 0 0.9375rem;
+}
+#footer .inner .copy-txt .txt {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+#footer .inner .txt-link {
+  display: inline-block;
+  margin: 0 0.9375rem;
+  text-decoration: underline;
+  color: #fff;
+}
+
+#sectionMain {
+  min-height: 0rem;
+}
+#sectionMain .tit {
+  margin-bottom: 3.75rem;
+}
+#sectionMain .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+#sectionMain .search .search-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 1.25rem;
+  width: 35rem;
+  height: 3.75rem;
+  background: #fff;
+  padding: 0.5rem 1.3125rem 0.5rem 0.5rem;
+}
+#sectionMain .search .search-wrap .serch-input {
+  margin: 0rem 0.625rem;
+  font-weight: 500;
+  color: #fff;
+  margin-right: auto;
+  color: #707070;
+}
+#sectionMain .search .search-wrap .ic-search {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../img/ic-input-serch.png");
+}
+#sectionMain .cont-mid {
+  display: flex;
+  align-items: center;
+}
+#sectionMain .cont-mid .mid-left {
+  margin-right: auto;
+}
+#sectionMain .cont-mid .mid-left .patch-list {
+  margin-bottom: 2.5rem;
+}
+#sectionMain .cont-mid .mid-left .patch-list .item {
+  color: #707070;
+}
+
+/* ================================== Icon ================================== */
+.ic {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, button, input, select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Pretendard";
+  font-weight: 400;
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  font-size: 1rem;
+  height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  height: 100%;
+  line-height: 1;
+  overflow-x: hidden;
+}
+body.fixed {
+  position: fixed;
+}
+
+ol, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+}
+
+.icon {
+  display: block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select {
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none; /*for IE10,11*/
+}

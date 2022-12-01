@@ -1,0 +1,44 @@
+//header
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: rem(150);
+	padding: 0 rem(40);
+	z-index: 100;
+    background: #1a2316;
+    .header-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: rem(1320);
+    }
+    .logo {
+        position: relative;
+        margin-right: rem(30);
+        a {
+            display:block;
+            width: rem(110);
+            height: rem(74);
+            background: url('../img/logo.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+    .menu-list {
+        width: 100%;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        .menu-btn {
+            a {
+                font-size: rem(18);
+                font-weight: 600;
+                color: #FFF;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+#footer{
+    position: relative;
+    width: 100%;
+	height: rem(180);
+	padding: rem(40) rem(40);
+    background-color: #1a2316;
+    .inner {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        .copy-logo {
+            margin-bottom: rem(10);
+            .ic-logo {
+                display:block;
+                width: rem(110);
+                height: rem(74);
+                background: url('../img/logo.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .copy-txt {
+            display:inline-block;
+            margin: 0 rem(15);
+            .txt {
+                font-size: rem(16);
+                font-weight: 400;
+                color:#fff;
+            }
+        }
+        .txt-link {
+            display:inline-block;
+            margin: 0 rem(15);
+            text-decoration: underline;
+            color:#fff;
+        }
+    }
+}
