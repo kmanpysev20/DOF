@@ -16,7 +16,6 @@
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/swiper.min.js"></script>
     <script src="js/jquery.fullpage.min.js"></script>
 </head>
 <body>
@@ -54,21 +53,41 @@
                     </div>
                     <div class="cont-mid">
                        <div class="mid-left">
+                            <p class="tit">※최근 패치 내용(5건)</p>
                             <ul class="patch-list">
-                                <li class="item">12.22 패치 내용 보기</li>
-                                <li class="item">12.21 패치 내용 보기</li>
-                                <li class="item">12.20 패치 내용 보기</li>
-                                <li class="item">12.19 패치 내용 보기</li>
-                                <li class="item">12.18 패치 내용 보기</li>
+                                <li class="item"><a href="https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-12-22-notes/" target="_blank">12.22 패치 내용 보기</a></li>
+                                <li class="item"><a href="https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-12-21-notes/" target="_blank">12.21 패치 내용 보기</a></li>
+                                <li class="item"><a href="https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-12-20-notes/" target="_blank">12.20 패치 내용 보기</a></li>
+                                <li class="item"><a href="https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-12-19-notes/" target="_blank">12.19 패치 내용 보기</a></li>
+                                <li class="item"><a href="https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-12-18-notes/" target="_blank">12.18 패치 내용 보기</a></li>
                             </ul>
-                            <p class="thumb"><iframe width="320" height="180" src="https://www.youtube.com/embed/OPn19Eln0EM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
                         </div>
                         <div class="mid-right">
-
+                            <p class="tit">[DOF - Member & Position]</p>
+                            <div class="position"><dt class="dt top">TOP</dt><dd class="dd silver">소환사명 : Dvis&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
+                            <div class="position"><dt class="dt jg">JG&nbsp;&nbsp;&nbsp;</dt><dd class="dd platinum">소환사명 : MoyaR&nbsp;<small class="sm platinum">(Platinum 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
+                            <div class="position"><dt class="dt mid">MID&nbsp;</dt><dd class="dd silver">소환사명 : shinai2&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
+                            <div class="position"><dt class="dt ad">AD&nbsp;&nbsp;&nbsp;</dt><dd class="dd silver">소환사명 : Boolean&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
+                            <div class="position"><dt class="dt sp">SP&nbsp;&nbsp;&nbsp;</dt><dd class="dd platinum">소환사명 : 섭섭하군여&nbsp;<small class="sm platinum">(Platinum 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
                         </div>
                     </div>
+                    <hr>
+                    <h4 class="tit dof-tit">DOF View</h4>
+                    <div class="swiper-container dof-slide main-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <p class="thumb"><video src="./video/킴칲모데카이저헌정영상.mp4" muted controls preload="true"></video><span class="tit">1. 킴칲의 모데까이져 헌정 영상</span></p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="thumb"><video src="./video/츄런들헌정영상(feat.seju.bel).mp4.mp4" muted controls preload="true"></video><span class="tit">2. 츄런들 헌정 영상</span></p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="thumb"><video src="./video/에코드리블.mp4" muted controls preload="true"></video><span class="tit">3. 1-5 에코 드리블 영상</span></p>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
-            </div>
         </section>
         <!-- sectionMain [e] -->
     </main>
@@ -89,6 +108,43 @@
 
 </div>
 <!-- wrap [e] -->
+
+<!-- script [s]-->
+<script src="js/swiper.min.js"></script>
+<script>
+
+    //DOF-slide [s]
+    dofSlideSwiper = new Swiper(".dof-slide", {
+        slidesPerView: 3,
+        loop: true,
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+        navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+        },
+    });
+    //DOF-slide [e]
+
+    //youtube-slide [s]
+    youtubeSlideSwiper = new Swiper(".youtube-slide", {
+        slidesPerView: 3,
+        loop: true,
+        // centeredSlides: true,
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+        navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+        },
+    });
+    //youtube-slide [e]
+</script>
+<!-- script [e]-->
 
 </body>
 </html>
