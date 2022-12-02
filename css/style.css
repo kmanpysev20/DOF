@@ -578,6 +578,9 @@
 #sectionMain .record-wrap .record .ic-arrow.lose {
   background: url("../img/ic-arrow-red.svg") no-repeat center/cover;
 }
+#sectionMain .record-wrap .record .ic-arrow.is-open {
+  transform: rotate(180deg);
+}
 #sectionMain .record-wrap .record .record-list {
   margin: 0rem 0.625rem;
 }

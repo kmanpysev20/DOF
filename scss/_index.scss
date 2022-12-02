@@ -424,6 +424,9 @@
                 &.lose {
                     background: url("../img/ic-arrow-red.svg") no-repeat center / cover;
                 }
+                &.is-open {
+                    transform: rotate(180deg);
+                }
             }
             .record-list {
                 margin: rem(0) rem(10);
