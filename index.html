@@ -44,7 +44,8 @@
         <section class = "main-section" id="sectionMain">
             <div class="inner">
                 <div class="contents">
-                    <h2 class="tit"><img src="https://opgg-static.akamaized.net/logo/20221128130320.e7a0c0107c414264bb0bd16a75f17890.png?image=q_auto,f_webp,w_auto&v=1669627046580" alt="DOF 로고"></h2>
+                    <h2 class="tit"><img src="./img/main-logo.png" alt="DOF 로고"></h2>
+                    <div class="btn-wrap"><button class="record-btn">전적 갱신</button></div>
                     <div class="search">
                         <div class="search-wrap">
                             <input type="text" class="serch-input" placeholder="소환사명, 소환사명, ...">
@@ -64,7 +65,7 @@
                         </div>
                         <div class="mid-right">
                             <p class="tit">[DOF - Member & Position]</p>
-                            <div class="position"><dt class="dt top">TOP</dt><dd class="dd silver">소환사명 : Dvis&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
+                            <div class="position"><dt class="dt top">TOP</dt><dd class="dd silver">소환사명 : Dvis&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>  <!--dd , sm 클래스 뒤에 티어 관련 클래스에 따라 css 적용-->
                             <div class="position"><dt class="dt jg">JG&nbsp;&nbsp;&nbsp;</dt><dd class="dd platinum">소환사명 : MoyaR&nbsp;<small class="sm platinum">(Platinum 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
                             <div class="position"><dt class="dt mid">MID&nbsp;</dt><dd class="dd silver">소환사명 : shinai2&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
                             <div class="position"><dt class="dt ad">AD&nbsp;&nbsp;&nbsp;</dt><dd class="dd silver">소환사명 : Boolean&nbsp;<small class="sm silver">(Silver 4)</small></dd><p class="check">출석율(월) : <span class="count">0</span>번</p></div>
@@ -72,21 +73,294 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="tit dof-tit">DOF View</h4>
+                    <h3 class="tit dof-tit">DOF View</h3>
                     <div class="swiper-container dof-slide main-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <p class="thumb"><video src="./video/킴칲모데카이저헌정영상.mp4" muted controls preload="true"></video><span class="tit">1. 킴칲의 모데까이져 헌정 영상</span></p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="./video/츄런들헌정영상(feat.seju.bel).mp4.mp4" muted controls preload="true"></video><span class="tit">2. 츄런들 헌정 영상</span></p>
+                                <p class="thumb"><video src="./video/츄런들헌정영상(feat.seju.bel).mp4.mp4" muted controls preload="true"></video><span class="tit">2. 츄런들 헌정 영상 1탄</span></p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="./video/에코드리블.mp4" muted controls preload="true"></video><span class="tit">3. 1-5 에코 드리블 영상</span></p>
+                                <p class="thumb"><video src="./video/츄런들헌정영상(feat.seju).mp4" muted controls preload="true"></video><span class="tit">3. 츄런들 헌정 영상 2탄</span></p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="thumb"><video src="./video/에코드리블.mp4" muted controls preload="true"></video><span class="tit">4. (1-5)에코 드리블 영상</span></p>
                             </div>
                         </div>
+                        <button type="button" class="swiper-button-prev"><i class="ic nav-prev-white"></i></button>
+                        <button type="button" class="swiper-button-next"><i class="ic nav-next-white"></i></button>
                         <div class="swiper-pagination"></div>
                     </div>
+                    <hr>
+                    <h3 class="tit current-tit">DOF 최근 전적</h3>
+                    <div class="tit-wrap">
+                        <h4 class="stit">5인큐</h4>
+                        <button class="record-btn">전적 갱신</button>
+                        <div class="odds-wrap">
+                            <p class="txt">승 률 :</p>
+                            <span class="odds">50%</span>
+                        </div>
+                    </div>
+                    <div class="record-wrap win"> <!--win lose 시 배경색 변경-->
+                        <div class="record">
+                            <ul class="record-list">
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                            </ul>
+                            <p class="result">승리</p><span class="team">블루팀</span><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><p class="gold">0.0k</p><span class="kill">36</span>&nbsp;&nbsp;&nbsp;&nbsp;vs&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="kill">36</span><p class="gold">0.0k</p><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><span class="team">레드팀</span><p class="result">패배</p> <!-- win, lose 클래스에 css 실행 -->
+                            <ul class="record-list">
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                            </ul>
+                            <i class="ic ic-arrow win"></i> <!--win lose 시 화살표 색 변경-->
+                        </div>
+                        <div class="record-detail">
+                            <div class="record-detail-wrap win">
+                                <div class="item-wrap">
+                                    <p class="txt">아이템</p>
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                </div>
+                                <div class="kda-cs">
+                                    <p class="txt">KDA/CS</p>
+                                    <span class="kda">11/<span class="kda-death">1</span>/4</span>
+                                    <span class="kda-point">15.00</span>
+                                    <span class="cs">207<small class="cs-divide">(8.6)</small></span>
+                                </div>
+                                <div class="dam-redam">
+                                    <p class="txt">데미지</p>
+                                    <span class="num">21,328</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                    <p class="txt">받은 데미지</p>
+                                    <span class="num">22,333</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                </div>
+                                <div class="id-info">
+                                    <p class="txt">소환사 정보</p>
+                                    <span class="id">소환사명</span>
+                                    <div class="id-wrap">
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt="">
+                                        <div class="spell-rhun-wrap">
+                                            <div class="id-spell">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerDot.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerFlash.png" alt="">
+                                            </div>
+                                            <div class="id-rhun">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carry">
+                                    <p class="tit">인분</p>
+                                    <span class="grade">2등</span>
+                                    <span class="carry-divide">1.8</span>
+                                </div>
+                            </div>
+                            
+                            <p class="vs"> V S </p>
+
+                            <div class="record-detail-wrap lose">
+                                <div class="carry">
+                                    <p class="tit">인분</p>
+                                    <span class="grade">2등</span>
+                                    <span class="carry-divide">1.8</span>
+                                </div>
+                                <div class="id-info">
+                                    <p class="txt">소환사 정보</p>
+                                    <span class="id">소환사명</span>
+                                    <div class="id-wrap">
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt="">
+                                        <div class="spell-rhun-wrap">
+                                            <div class="id-spell">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerDot.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerFlash.png" alt="">
+                                            </div>
+                                            <div class="id-rhun">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dam-redam">
+                                    <p class="txt">데미지</p>
+                                    <span class="num">21,328</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                    <p class="txt">받은 데미지</p>
+                                    <span class="num">22,333</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                </div>
+                                <div class="kda-cs">
+                                    <p class="txt">KDA/CS</p>
+                                    <span class="kda">11/<span class="kda-death">1</span>/4</span>
+                                    <span class="kda-point">15.00</span>
+                                    <span class="cs">207<small class="cs-divide">(8.6)</small></span>
+                                </div>
+                                <div class="item-wrap">
+                                    <p class="txt">아이템</p>
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="record-wrap win"> <!--win lose 시 배경색 변경-->
+                        <div class="record">
+                            <ul class="record-list">
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                            </ul>
+                            <p class="result">승리</p><span class="team">블루팀</span><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><p class="gold">0.0k</p><span class="kill">36</span>&nbsp;&nbsp;&nbsp;&nbsp;vs&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="kill">36</span><p class="gold">0.0k</p><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><span class="team">레드팀</span><p class="result">패배</p> <!-- win, lose 클래스에 css 실행 -->
+                            <ul class="record-list">
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                                <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
+                            </ul>
+                            <i class="ic ic-arrow win"></i> <!--win lose 시 화살표 색 변경-->
+                        </div>
+                        <div class="record-detail">
+                            <div class="record-detail-wrap win">
+                                <div class="item-wrap">
+                                    <p class="txt">아이템</p>
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                </div>
+                                <div class="kda-cs">
+                                    <p class="txt">KDA/CS</p>
+                                    <span class="kda">11/<span class="kda-death">1</span>/4</span>
+                                    <span class="kda-point">15.00</span>
+                                    <span class="cs">207<small class="cs-divide">(8.6)</small></span>
+                                </div>
+                                <div class="dam-redam">
+                                    <p class="txt">데미지</p>
+                                    <span class="num">21,328</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                    <p class="txt">받은 데미지</p>
+                                    <span class="num">22,333</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                </div>
+                                <div class="id-info">
+                                    <p class="txt">소환사 정보</p>
+                                    <span class="id">소환사명</span>
+                                    <div class="id-wrap">
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt="">
+                                        <div class="spell-rhun-wrap">
+                                            <div class="id-spell">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerDot.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerFlash.png" alt="">
+                                            </div>
+                                            <div class="id-rhun">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carry">
+                                    <p class="tit">인분</p>
+                                    <span class="grade">2등</span>
+                                    <span class="carry-divide">1.8</span>
+                                </div>
+                            </div>
+                            
+                            <p class="vs"> V S </p>
+
+                            <div class="record-detail-wrap lose">
+                                <div class="carry">
+                                    <p class="tit">인분</p>
+                                    <span class="grade">2등</span>
+                                    <span class="carry-divide">1.8</span>
+                                </div>
+                                <div class="id-info">
+                                    <p class="txt">소환사 정보</p>
+                                    <span class="id">소환사명</span>
+                                    <div class="id-wrap">
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt="">
+                                        <div class="spell-rhun-wrap">
+                                            <div class="id-spell">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerDot.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/SummonerFlash.png" alt="">
+                                            </div>
+                                            <div class="id-rhun">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="">
+                                                <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dam-redam">
+                                    <p class="txt">데미지</p>
+                                    <span class="num">21,328</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                    <p class="txt">받은 데미지</p>
+                                    <span class="num">22,333</span>
+                                    <span class="progress">
+                                        <span class="fill"></span>
+                                    </span>
+                                </div>
+                                <div class="kda-cs">
+                                    <p class="txt">KDA/CS</p>
+                                    <span class="kda">11/<span class="kda-death">1</span>/4</span>
+                                    <span class="kda-point">15.00</span>
+                                    <span class="cs">207<small class="cs-divide">(8.6)</small></span>
+                                </div>
+                                <div class="item-wrap">
+                                    <p class="txt">아이템</p>
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/3047.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
         </section>
         <!-- sectionMain [e] -->

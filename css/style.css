@@ -77,6 +77,7 @@
   align-items: center;
   margin: 0 auto;
   max-width: 82.5rem;
+  border-bottom: 0.125rem solid #fff;
 }
 #header .logo {
   position: relative;
@@ -85,8 +86,8 @@
 #header .logo a {
   display: block;
   width: 6.875rem;
-  height: 4.625rem;
-  background: url("../img/logo.png");
+  height: 3.75rem;
+  background: url("../img/logo-italic.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -145,6 +146,8 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  padding-top: 2.5rem;
+  border-top: 0.125rem solid #fff;
 }
 #footer .inner .copy-logo {
   margin-bottom: 0.625rem;
@@ -152,14 +155,13 @@
 #footer .inner .copy-logo .ic-logo {
   display: block;
   width: 6.875rem;
-  height: 4.625rem;
+  height: 2.5rem;
   background: url("../img/logo.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 #footer .inner .copy-txt {
   display: inline-block;
-  margin: 0 0.9375rem;
 }
 #footer .inner .copy-txt .txt {
   font-size: 1rem;
@@ -178,6 +180,26 @@
 }
 #sectionMain .tit {
   margin-bottom: 3.75rem;
+}
+#sectionMain .tit > img {
+  max-width: 18.75rem;
+}
+#sectionMain .btn-wrap {
+  margin-bottom: 2.5rem;
+}
+#sectionMain .btn-wrap .record-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0.125rem solid #fff;
+  border-radius: 2.5rem;
+  padding: 0.625rem 2.5rem;
+  margin-right: auto;
+  background: #707070;
+  border: 0.125rem solid #707070;
+}
+#sectionMain .btn-wrap .record-btn:hover {
+  opacity: 0.8;
 }
 #sectionMain .search {
   display: flex;
@@ -384,7 +406,7 @@
   margin-bottom: 0rem;
 }
 #sectionMain .main-swiper {
-  margin-bottom: 1.25rem;
+  margin-bottom: 3.75rem;
 }
 #sectionMain .main-swiper .swiper-slide {
   height: 21.25rem;
@@ -431,6 +453,303 @@
   border: 0.0625rem solid #fff;
   border-radius: 1rem;
 }
+#sectionMain .main-swiper [class*=swiper-button] {
+  top: 95%;
+}
+#sectionMain .main-swiper .swiper-button-next {
+  right: 3.9375rem;
+  z-index: 11;
+}
+#sectionMain .main-swiper .swiper-button-prev {
+  left: 3.9375rem;
+  z-index: 11;
+}
+#sectionMain .current-tit {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+#sectionMain .tit-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+#sectionMain .tit-wrap .stit {
+  font-size: 5rem;
+  font-weight: 500;
+  border: 0.125rem solid #fff;
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  color: #29a07d;
+  margin-right: 2.5rem;
+}
+#sectionMain .tit-wrap .record-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0.125rem solid #fff;
+  border-radius: 2.5rem;
+  padding: 0.625rem 2.5rem;
+  margin-right: auto;
+  background: #707070;
+  border: 0.125rem solid #707070;
+}
+#sectionMain .tit-wrap .record-btn:hover {
+  opacity: 0.8;
+}
+#sectionMain .tit-wrap .odds-wrap {
+  display: flex;
+  border: 0.125rem solid #fff;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+}
+#sectionMain .tit-wrap .odds-wrap .txt {
+  margin: 0rem 1.25rem;
+  font-size: 3.125rem;
+}
+#sectionMain .tit-wrap .odds-wrap .odds {
+  font-size: 3.75rem;
+  font-weight: 600;
+  color: #2d5cc9;
+}
+#sectionMain .record-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.125rem solid #fff;
+  border-radius: 0.625rem;
+  padding: 2.5rem 1.25rem;
+}
+#sectionMain .record-wrap.win {
+  background: #ecf2ff;
+}
+#sectionMain .record-wrap.lose {
+  background: #fff1f3;
+}
+#sectionMain .record-wrap .record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+#sectionMain .record-wrap .record .result {
+  margin: 0rem 0.625rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record .team {
+  margin: 0rem 1.25rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record [class*=ic-] {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0rem 0.9375rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record .ic-tower {
+  background-image: url("../img/ic-tower.svg");
+}
+#sectionMain .record-wrap .record .ic-dragon {
+  background-image: url("../img/ic-dragon.svg");
+}
+#sectionMain .record-wrap .record .ic-baron {
+  background-image: url("../img/ic-baron.svg");
+}
+#sectionMain .record-wrap .record .gold {
+  margin-left: 1.5625rem;
+  margin-right: 1.5625rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record .kill {
+  color: #000;
+}
+#sectionMain .record-wrap .record .ic-arrow {
+  width: 1.875rem;
+  height: 1.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+#sectionMain .record-wrap .record .ic-arrow.win {
+  background: url("../img/ic-arrow-blue.svg") no-repeat center/cover;
+}
+#sectionMain .record-wrap .record .ic-arrow.lose {
+  background: url("../img/ic-arrow-red.svg") no-repeat center/cover;
+}
+#sectionMain .record-wrap .record .record-list {
+  margin: 0rem 0.625rem;
+}
+#sectionMain .record-wrap .record .record-list .record-item {
+  margin: 0.375rem 0rem;
+}
+#sectionMain .record-wrap .record .record-list .record-item > img {
+  width: 1rem;
+  height: 1rem;
+}
+#sectionMain .record-wrap .record .record-list .record-item .id {
+  color: #000;
+  margin: 0rem 0.375rem;
+}
+#sectionMain .record-wrap .record-detail {
+  display: none;
+  margin-top: 1.25rem;
+  background: #fff;
+  padding: 2.5rem 1.25rem;
+}
+#sectionMain .record-wrap .record-detail.is-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap.win {
+  background: #ecf2ff;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap.lose {
+  background: #feeeed;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .item-wrap {
+  width: 4.375rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .item-wrap .txt {
+  width: 100%;
+  font-size: 0.75rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .item-wrap > img {
+  width: 1.125rem;
+  border-radius: 0.125rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .txt {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda .kda-death {
+  color: #f9a5a0;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda-point {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .cs {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .cs .cs-divide {
+  font-size: 0.75rem;
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .txt {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .num {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .progress {
+  display: block;
+  width: 3.125rem;
+  height: 0.375rem;
+  margin: 0.25rem auto 0.25rem;
+  background-color: #fff;
+  border-radius: 0.625rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .progress .fill {
+  display: block;
+  width: 10%;
+  height: 100%;
+  border-radius: 0.625rem;
+  background-color: #f4584e;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .txt {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id {
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap > img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.125rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap .spell-rhun-wrap {
+  display: flex;
+  flex-direction: column;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap .spell-rhun-wrap .id-spell {
+  display: flex;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap .spell-rhun-wrap .id-spell > img {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.125rem;
+  margin: 0.1875rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap .spell-rhun-wrap .id-rhun {
+  display: flex;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id-wrap .spell-rhun-wrap .id-rhun > img {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.125rem;
+  margin: 0.1875rem;
+  background: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .carry {
+  font-size: 0.75rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .carry .tit {
+  color: #000;
+  display: block;
+  margin-bottom: 0.625rem;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .carry .grade {
+  display: block;
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .record-detail-wrap .carry .carry-divide {
+  display: block;
+  color: #000;
+}
+#sectionMain .record-wrap .record-detail .vs {
+  width: 9.375rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #000;
+}
 
 /* ================================== Icon ================================== */
 .ic {
@@ -440,13 +759,13 @@
   background-size: cover;
 }
 .ic.nav-prev-white {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 1.875rem;
+  height: 1.875rem;
   background-image: url("../img/ic-video-left.png");
 }
 .ic.nav-next-white {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 1.875rem;
+  height: 1.875rem;
   background-image: url("../img/ic-video-right.png");
 }
 

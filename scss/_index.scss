@@ -3,7 +3,28 @@
     min-height: rem(0);
     .tit {
         margin-bottom: rem(60);
+        > img {
+            max-width: rem(300);
+        }
     }
+    .btn-wrap {
+        margin-bottom: rem(40);
+        .record-btn {
+            cursor: pointer;
+            font-size: rem(24);
+            font-weight: 600;
+            border: rem(2) solid #fff;
+            border-radius: rem(40);
+            padding: rem(10) rem(40);
+            margin-right: auto;
+            background: #707070;
+            border: rem(2) solid #707070;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
     .search {
         display:flex;
         justify-content: center;
@@ -233,7 +254,7 @@
     }
     //main-slide
     .main-swiper {
-        margin-bottom: rem(20);
+        margin-bottom: rem(60);
         .swiper-slide {
             height: rem(340);
             display:flex;
@@ -277,6 +298,304 @@
                 background: #fff;
                 border: rem(1) solid #fff;
                 border-radius: rem(16);
+            }
+        }
+        [class*='swiper-button'] {
+            top: 95%;
+        }
+        .swiper-button-next {
+            right: rem(63);
+            z-index: 11;
+        }
+        .swiper-button-prev {
+            left: rem(63);
+            z-index: 11;
+        }
+    }
+    .current-tit {
+        font-size: rem(30);
+        font-weight: 600;
+        margin-bottom: rem(40);
+    }
+    .tit-wrap {
+        display:flex;
+        align-items: center;
+        margin-bottom: rem(40);
+        .stit {
+            font-size: rem(80);
+            font-weight: 500;
+            border: rem(2) solid #fff;
+            background: #fff;
+            border-radius: rem(10);
+            padding: rem(10);
+            color:#29a07d;
+            margin-right: rem(40);
+        }
+        .record-btn {
+            cursor: pointer;
+            font-size: rem(24);
+            font-weight: 600;
+            border: rem(2) solid #fff;
+            border-radius: rem(40);
+            padding: rem(10) rem(40);
+            margin-right: auto;
+            background: #707070;
+            border: rem(2) solid #707070;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .odds-wrap {
+            display:flex;
+            border: rem(2) solid #fff;
+            border-radius: rem(10);
+            padding: rem(10);
+            .txt {
+                margin: rem(0) rem(20);
+                font-size: rem(50);    
+            }
+            .odds {
+                font-size: rem(60);
+                font-weight: 600;
+                color:#2d5cc9;
+            }
+        }
+    }
+    .record-wrap {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        border: rem(2) solid #fff;
+        border-radius: rem(10);
+        padding: rem(40) rem(20);
+        &.win {
+            background: #ecf2ff;
+        }
+        &.lose {
+            background: #fff1f3;
+        }
+        .record {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:#000;
+            .result {
+                margin: rem(0) rem(10);
+                color:#000;
+            }
+            .team {
+                margin: rem(0) rem(20);
+                color:#000;
+            }
+            [class*='ic-'] {
+                width: rem(13);
+                height: rem(13);
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: rem(0) rem(15);
+                color:#000;
+            }
+            .ic-tower {
+                background-image: url('../img/ic-tower.svg');
+            }
+            .ic-dragon {
+                background-image: url('../img/ic-dragon.svg');
+            }
+            .ic-baron {
+                background-image: url('../img/ic-baron.svg');
+            }
+            .gold {
+                margin-left: rem(25);
+                margin-right: rem(25);
+                color:#000;
+            }
+            .kill {
+                color:#000;
+            }
+            .ic-arrow {
+                width: rem(30);
+                height: rem(30);
+                transition: all .2s ease;
+                cursor: pointer;
+                &.win {
+                    background: url("../img/ic-arrow-blue.svg") no-repeat center / cover;
+                }
+                &.lose {
+                    background: url("../img/ic-arrow-red.svg") no-repeat center / cover;
+                }
+            }
+            .record-list {
+                margin: rem(0) rem(10);
+                .record-item {
+                    margin: rem(6) rem(0);
+                    > img {
+                        width: rem(16);
+                        height: rem(16);
+                    }
+                    .id {
+                        color:#000;
+                        margin : rem(0) rem(6);
+                    }
+                }
+            }
+        }
+        .record-detail {
+            display:none;
+            margin-top: rem(20);
+            background: #fff;
+            padding: rem(40) rem(20);
+            &.is-open {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .record-detail-wrap {
+                width: 100%;
+                display:flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: rem(20) rem(20);
+                &.win {
+                    background: #ecf2ff;
+                }
+                &.lose {
+                    background: #feeeed;
+                }
+                .item-wrap {
+                    width: rem(70);
+                    display:flex;
+                    flex-wrap: wrap;
+                    justify-content:center;
+                    align-items: center;
+                    .txt {
+                        width: 100%;
+                        font-size: rem(12);
+                        color:#000;
+                    }
+                    > img {
+                        width: rem(18);
+                        border-radius: rem(2);
+                    }
+                }
+                .kda-cs {
+                    display:flex;
+                    flex-direction: column;
+                    font-size: rem(12);
+                    .txt {
+                        color:#000;
+                    }
+                    .kda {
+                        color:#000;
+                        .kda-death {
+                            color:#f9a5a0;
+                        }
+                    }
+                    .kda-point {
+                        color:#000;
+                    }
+                    .cs {
+                        color: #000;
+                        .cs-divide {
+                            font-size: rem(12);
+                            color:#000;
+                        }
+                    }
+                }
+                .dam-redam {
+                    display:flex;
+                    flex-direction: column;
+                    font-size: rem(12);
+                    .txt {
+                        color:#000;
+                    }
+                    .num {
+                        color:#000;
+                    }
+                    .progress {
+                        display:block;
+                        width: rem(50);
+                        height: rem(6);
+                        margin: rem(4) auto rem(4);
+                        background-color: #fff;
+                        border-radius: rem(10);
+                        .fill {
+                            display:block;
+                            width: 10%;
+                            height: 100%;
+                            border-radius: rem(10);
+                            background-color: #f4584e;
+                        }
+                    }
+                }
+                .id-info {
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: rem(12);
+                    .txt {
+                        color:#000;
+                    }
+                    .id {
+                        color:#000;
+                    }
+                    .id-wrap {
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        > img {
+                            width: rem(36);
+                            height: rem(36);
+                            border-radius: rem(2);
+                        }
+                        .spell-rhun-wrap {
+                            display:flex;
+                            flex-direction: column;
+                            .id-spell {
+                                display:flex;
+                                > img {
+                                    width: rem(14);
+                                    height: rem(14);
+                                    border-radius: rem(2);
+                                    margin: rem(3);
+                                }
+                            }
+                            .id-rhun {
+                                display:flex;
+                                > img {
+                                    width: rem(14);
+                                    height: rem(14);
+                                    border-radius: rem(2);
+                                    margin: rem(3);
+                                    background: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+                .carry {
+                    font-size: rem(12);
+                    .tit {
+                        color:#000;
+                        display:block;
+                        margin-bottom: rem(10);
+                    }
+                    .grade {
+                        display:block;
+                        color:#000;
+                    }
+                    .carry-divide {
+                        display:block;
+                        color:#000;
+                    }
+                }
+            }
+            .vs {
+                width: rem(150);
+                font-size: rem(30);
+                font-weight: 700;
+                color:#000;
             }
         }
     }

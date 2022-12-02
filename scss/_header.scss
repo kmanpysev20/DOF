@@ -15,6 +15,7 @@
         align-items: center;
         margin: 0 auto;
         max-width: rem(1320);
+        border-bottom: rem(2) solid #fff;
     }
     .logo {
         position: relative;
@@ -22,8 +23,8 @@
         a {
             display:block;
             width: rem(110);
-            height: rem(74);
-            background: url('../img/logo.png');
+            height: rem(60);
+            background: url('../img/logo-italic.png');
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
