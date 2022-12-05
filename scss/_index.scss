@@ -39,7 +39,7 @@
             height: rem(60);
             background: #fff;
             padding: rem(8) rem(21) rem(8) rem(8);
-            .serch-input {
+            .search-input {
                 margin: rem(0) rem(10);
                 font-weight: 500;
                 margin-right: auto;
@@ -163,6 +163,7 @@
                     display:flex;
                     align-items: center;
                     margin-right: auto;
+                    font-weight: 600;
                     &.bronze {
                         &::after {
                             content: '';
@@ -627,6 +628,72 @@
                 font-weight: 700;
                 color:#000;
                 margin: auto rem(10);
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) { 
+    #sectionMain {
+        .tit {
+            >img {
+                width: 100%;
+                max-width: unset;
+            }
+        }
+
+        .search {
+            .search-wrap {
+                width: 100%;
+                max-width: rem(580);
+                .search-input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cont-mid {
+            flex-direction: column;
+            align-items: center;
+            .mid-left {
+                width: 100%;
+                max-width: rem(580);
+                margin-right: unset;
+            }
+            .mid-right {
+                .position {
+                    flex-direction: column;
+                    align-items: center;
+                    .dt {
+                        width: unset;
+                        margin: rem(10) rem(0);
+                        &::after {
+                            content: unset;
+                        }
+                        &.top::before {
+                            left:rem(40);
+                        }
+                        &.jg::before {
+                            left:rem(40);
+                        }
+                        &.mid::before {
+                            left:rem(40);
+                        }
+                        &.ad::before {
+                            left:rem(40);
+                        }
+                        &.sp::before {
+                            left:rem(40);
+                        }
+                    }
+                    .dd {
+                        margin-right: unset;
+                        margin: rem(10) rem(0);
+                    }
+                    .check {
+                        margin: rem(10) rem(0);
+                    }
+                }
             }
         }
     }

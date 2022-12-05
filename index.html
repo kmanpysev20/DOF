@@ -28,14 +28,26 @@
         <div class="inner header-inner">
             <h1 class="logo"><a href="./index.html"></a></h1>
             <ul class="menu-list">
-                <li class="menu-btn"><a href="#.">HOME</a></li>
+                <li class="menu-btn"><a href="/index.html">HOME</a></li>
                 <li class="menu-btn"><a href="#.">INTRO</a></li>
                 <li class="menu-btn"><a href="#.">MEMBER</a></li>
                 <li class="menu-btn"><a href="#.">TIP</a></li>
                 <li class="menu-btn"><a href="#.">BORDER</a></li>
                 <li class="menu-btn"><a href="#.">RECRUIT</a></li>
             </ul>
+            <button type="button" class="btn btn-gnb"><i class="ic ic-gnb-open"></i></button>
         </div>
+        <nav id="gnb">
+            <button type="button" class="btn btn-gnb-close"><i class="ic ic-gnb-close"></i></button>
+            <ul class="gnb-list">
+                <li><a href="#." class="txt">HOME</a></li>
+                <li><a href="#." class="txt">INTRO</a></li>
+                <li><a href="#." class="txt">MEMBER</a></li>
+                <li><a href="#." class="txt">TIP</a></li>
+                <li><a href="#." class="txt">BORDER</a></li>
+                <li><a href="#." class="txt">RECRUIT</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- header [e] -->
 
@@ -48,7 +60,7 @@
                     <div class="btn-wrap"><button class="record-btn">전적 갱신</button></div>
                     <div class="search">
                         <div class="search-wrap">
-                            <input type="text" class="serch-input" placeholder="소환사명, 소환사명, ...">
+                            <input type="text" class="search-input" placeholder="소환사명, 소환사명, ...">
                             <i class="ic ic-search"></i>
                         </div>
                     </div>
@@ -684,8 +696,8 @@
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
                             </ul>
-                            <p class="result">승리</p><span class="team">블루팀</span><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><p class="gold">0.0k</p><span class="kill">36</span>&nbsp;&nbsp;&nbsp;&nbsp;vs&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="kill">36</span><p class="gold">0.0k</p><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><span class="team">레드팀</span><p class="result">패배</p> <!-- win, lose 클래스에 css 실행 -->
+                            <p class="result">패배</p><span class="team">블루팀</span><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><p class="gold">0.0k</p><span class="kill">36</span>&nbsp;&nbsp;&nbsp;&nbsp;vs&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="kill">36</span><p class="gold">0.0k</p><i class="ic-tower">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-dragon">&nbsp;&nbsp;&nbsp;&nbsp;0</i><i class="ic-baron">&nbsp;&nbsp;&nbsp;&nbsp;0</i><span class="team">레드팀</span><p class="result">승리</p> <!-- win, lose 클래스에 css 실행 -->
                             <ul class="record-list">
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
@@ -693,7 +705,7 @@
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
                                 <li class="record-item"><img src="https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/Garen.png" alt=""><a class="id" href="#.">소환사명</a></li>
                             </ul>
-                            <i class="ic ic-arrow win"></i> <!--win lose 시 화살표 색 변경-->
+                            <i class="ic ic-arrow lose"></i> <!--win lose 시 화살표 색 변경-->
                         </div>
                         <div class="record-detail">
                             <div class="record-detail-sub">
@@ -1261,26 +1273,16 @@
 <script src="js/swiper.min.js"></script>
 <script>
 
-    //DOF-slide [s]
-    dofSlideSwiper = new Swiper(".dof-slide", {
-        slidesPerView: 3,
-        loop: true,
-        pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        },
-        navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-        },
-    });
-    //DOF-slide [e]
+// pc & mo swiper control
+let ww = $(window).width();
+let dofSlideSwiper = undefined;
 
-    //youtube-slide [s]
-    youtubeSlideSwiper = new Swiper(".youtube-slide", {
+// dofswiper [s]
+function dofswiper() {
+        if (ww > 1024 && dofSlideSwiper == undefined) {
+        dofSlideSwiper = new Swiper(".dof-slide", {
         slidesPerView: 3,
         loop: true,
-        // centeredSlides: true,
         pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -1290,7 +1292,46 @@
                 prevEl: ".swiper-button-prev",
         },
     });
-    //youtube-slide [e]
+  } 
+  else if (ww <= 1024 && dofSlideSwiper != undefined) {
+    dofSlideSwiper = new Swiper(".dof-slide", {
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+        navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+        },
+    });
+  }
+}
+dofswiper();
+
+$(window).on('resize', function () {
+  ww = $(window).width();
+  dofswiper();
+});
+// dofswiper [e]
+
+// onload
+window.addEventListener('load', function(event) {
+dofswiper()
+}, true);
+
+//onresize
+window.addEventListener('resize', function(event) {
+dofswiper()
+}, true);
+
+// onscroll
+window.addEventListener('scroll', function(event) {
+dofswiper()
+}, true);
+
+
 </script>
 <!-- script [e]-->
 

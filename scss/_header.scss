@@ -42,4 +42,80 @@
             }
         }
     }
+    .inner:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.4s ease-out;
+    }
+
+    .btn-gnb {
+        display:none;
+        cursor: pointer;
+        .ic-gnb-open {
+            width: rem(40);
+            height: rem(40);
+            background-image: url('../img/ic-menu.png');
+        }
+    }
+    #gnb {
+        display:none;
+    }
+}
+
+@media (max-width: 1024px) { 
+    #header {
+        .logo {
+            z-index: 9999;
+            margin-right: auto;
+        }
+        &.is-gnb .inner::before {
+            opacity: 1;
+            z-index: 9998;
+            transform: translateY(0);
+        }
+        .menu-list {
+            display:none;
+        }
+        .btn-gnb {
+            display:block;
+        }
+        #gnb {
+            position: fixed;
+            width: 100%;
+            &.is-gnb {
+                display:block;
+                z-index: 9999;
+            }
+            .btn-gnb-close {
+                position: absolute;
+                top:rem(-80);
+                right:rem(80);
+                cursor: pointer;
+                width: rem(40);
+                height: rem(40);
+                .ic-gnb-close {
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../img/ic-popup-Close.png');
+                }
+            }
+            .gnb-list {
+                >li {
+                    margin: rem(40) rem(0);
+                    .txt {
+                        font-size: rem(20);
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
 }
