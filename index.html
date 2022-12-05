@@ -86,7 +86,7 @@
                     </div>
                     <hr>
                     <h3 class="tit dof-tit">DOF View</h3>
-                    <div class="swiper-container dof-slide main-swiper">
+                    <div class="swiper-container main-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <p class="thumb"><video src="./video/킴칲모데카이저헌정영상.mp4" muted controls preload="true"></video><span class="tit">1. 킴칲의 모데까이져 헌정 영상</span></p>
@@ -1275,12 +1275,13 @@
 
 // pc & mo swiper control
 let ww = $(window).width();
-let dofSlideSwiper = undefined;
+let dofslide = undefined;
+let dofslidemo = undefined;
 
 // dofswiper [s]
-function dofswiper() {
-        if (ww > 1024 && dofSlideSwiper == undefined) {
-        dofSlideSwiper = new Swiper(".dof-slide", {
+function dofSwiper() {
+  if (ww > 1024 && dofslide == undefined) {
+    dofslide = new Swiper(".main-swiper", {
         slidesPerView: 3,
         loop: true,
         pagination: {
@@ -1292,10 +1293,11 @@ function dofswiper() {
                 prevEl: ".swiper-button-prev",
         },
     });
-  } 
-  else if (ww <= 1024 && dofSlideSwiper != undefined) {
-    dofSlideSwiper = new Swiper(".dof-slide", {
+  } else {
+    dofslidemo = new Swiper(".main-swiper", {
+        centeredSlides: true,
         slidesPerView: 1,
+        spaceBetween: 20,
         loop: true,
         pagination: {
         el: '.swiper-pagination',
@@ -1308,12 +1310,26 @@ function dofswiper() {
     });
   }
 }
-dofswiper();
+dofSwiper();
 
 $(window).on('resize', function () {
   ww = $(window).width();
-  dofswiper();
+  dofSwiper();
 });
+
+// dofSlideSwiperMo = new Swiper(".main-swiper-mo", {
+//         slidesPerView: 1,
+//         loop: true,
+//         pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//         },
+//         navigation: {
+//                 nextEl: ".swiper-button-next",
+//                 prevEl: ".swiper-button-prev",
+//         },
+//     });
+
 // dofswiper [e]
 
 // onload

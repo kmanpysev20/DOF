@@ -696,5 +696,24 @@
                 }
             }
         }
+        .main-swiper {
+            .swiper-button-next {
+                right:0;
+            }
+            .swiper-button-prev {
+                left:0;
+            }
+            .swiper-slide {
+                .thumb {
+                    width: unset;
+                    &:hover {
+                        transform: unset;
+                    }
+                    > video {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
