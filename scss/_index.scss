@@ -369,11 +369,15 @@
         border: rem(2) solid #fff;
         border-radius: rem(10);
         padding: rem(40) rem(20);
+        margin-bottom: rem(0);
         &.win {
             background: #ecf2ff;
         }
         &.lose {
             background: #fff1f3;
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(80);
         }
         .record {
             display:flex;
@@ -448,17 +452,23 @@
             margin-top: rem(20);
             background: #fff;
             padding: rem(40) rem(20);
+            .record-detail-sub {
+                display:flex;
+                margin: rem(5) rem(0);
+            }
+
             &.is-open {
                 display:flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
             }
             .record-detail-wrap {
                 width: 100%;
                 display:flex;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: space-between;
-                padding: rem(20) rem(20);
+                padding: rem(6) rem(60);
                 &.win {
                     background: #ecf2ff;
                 }
@@ -474,11 +484,15 @@
                     .txt {
                         width: 100%;
                         font-size: rem(12);
+                        font-weight: 700;
                         color:#000;
+                        margin: rem(8) rem(0);
+                        
                     }
                     > img {
                         width: rem(18);
                         border-radius: rem(2);
+                        margin: rem(2);
                     }
                 }
                 .kda-cs {
@@ -487,18 +501,23 @@
                     font-size: rem(12);
                     .txt {
                         color:#000;
+                        margin: rem(8) rem(0);
+                        font-weight: 700;
                     }
                     .kda {
                         color:#000;
+                        margin-bottom: rem(3);
                         .kda-death {
                             color:#f9a5a0;
                         }
                     }
                     .kda-point {
                         color:#000;
+                        margin-bottom: rem(3);
                     }
                     .cs {
                         color: #000;
+                        margin-bottom: rem(3);
                         .cs-divide {
                             font-size: rem(12);
                             color:#000;
@@ -511,6 +530,8 @@
                     font-size: rem(12);
                     .txt {
                         color:#000;
+                        margin: rem(8) rem(0);
+                        font-weight: 700;
                     }
                     .num {
                         color:#000;
@@ -539,6 +560,8 @@
                     font-size: rem(12);
                     .txt {
                         color:#000;
+                        margin: rem(8) rem(0);
+                        font-weight: 700;
                     }
                     .id {
                         color:#000;
@@ -582,11 +605,15 @@
                     .tit {
                         color:#000;
                         display:block;
-                        margin-bottom: rem(10);
+                        margin : rem(8) rem(0);
+                        font-weight: 700;
                     }
                     .grade {
                         display:block;
+                        border: rem(1) solid #000;
+                        padding: rem(2);
                         color:#000;
+                        margin-bottom: rem(6);
                     }
                     .carry-divide {
                         display:block;
@@ -599,6 +626,7 @@
                 font-size: rem(30);
                 font-weight: 700;
                 color:#000;
+                margin: auto rem(10);
             }
         }
     }

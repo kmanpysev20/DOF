@@ -520,12 +520,16 @@
   border: 0.125rem solid #fff;
   border-radius: 0.625rem;
   padding: 2.5rem 1.25rem;
+  margin-bottom: 0rem;
 }
 #sectionMain .record-wrap.win {
   background: #ecf2ff;
 }
 #sectionMain .record-wrap.lose {
   background: #fff1f3;
+}
+#sectionMain .record-wrap:not(:last-child) {
+  margin-bottom: 5rem;
 }
 #sectionMain .record-wrap .record {
   display: flex;
@@ -601,17 +605,22 @@
   background: #fff;
   padding: 2.5rem 1.25rem;
 }
+#sectionMain .record-wrap .record-detail .record-detail-sub {
+  display: flex;
+  margin: 0.3125rem 0rem;
+}
 #sectionMain .record-wrap .record-detail.is-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.25rem;
+  padding: 0.375rem 3.75rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap.win {
   background: #ecf2ff;
@@ -629,11 +638,14 @@
 #sectionMain .record-wrap .record-detail .record-detail-wrap .item-wrap .txt {
   width: 100%;
   font-size: 0.75rem;
+  font-weight: 700;
   color: #000;
+  margin: 0.5rem 0rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .item-wrap > img {
   width: 1.125rem;
   border-radius: 0.125rem;
+  margin: 0.125rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs {
   display: flex;
@@ -642,18 +654,23 @@
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .txt {
   color: #000;
+  margin: 0.5rem 0rem;
+  font-weight: 700;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda {
   color: #000;
+  margin-bottom: 0.1875rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda .kda-death {
   color: #f9a5a0;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .kda-point {
   color: #000;
+  margin-bottom: 0.1875rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .cs {
   color: #000;
+  margin-bottom: 0.1875rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .kda-cs .cs .cs-divide {
   font-size: 0.75rem;
@@ -666,6 +683,8 @@
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .txt {
   color: #000;
+  margin: 0.5rem 0rem;
+  font-weight: 700;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .dam-redam .num {
   color: #000;
@@ -694,6 +713,8 @@
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .txt {
   color: #000;
+  margin: 0.5rem 0rem;
+  font-weight: 700;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .id-info .id {
   color: #000;
@@ -737,11 +758,15 @@
 #sectionMain .record-wrap .record-detail .record-detail-wrap .carry .tit {
   color: #000;
   display: block;
-  margin-bottom: 0.625rem;
+  margin: 0.5rem 0rem;
+  font-weight: 700;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .carry .grade {
   display: block;
+  border: 0.0625rem solid #000;
+  padding: 0.125rem;
   color: #000;
+  margin-bottom: 0.375rem;
 }
 #sectionMain .record-wrap .record-detail .record-detail-wrap .carry .carry-divide {
   display: block;
@@ -752,6 +777,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   color: #000;
+  margin: auto 0.625rem;
 }
 
 /* ================================== Icon ================================== */
