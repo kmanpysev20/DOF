@@ -385,37 +385,49 @@
             justify-content: center;
             align-items: center;
             color:#000;
-            .result {
-                margin: rem(0) rem(10);
-                color:#000;
+            .result-team {
+                display:flex;
+                .result {
+                    margin: rem(0) rem(10);
+                    color:#000;
+                }
+                .team {
+                    margin: rem(0) rem(20);
+                    color:#000;
+                }
             }
-            .team {
+            .record-etc {
+                display:flex;
+                [class*='ic-'] {
+                    width: rem(13);
+                    height: rem(13);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    margin: rem(0) rem(15);
+                    color:#000;
+                }
+                .ic-tower {
+                    background-image: url('../img/ic-tower.svg');
+                }
+                .ic-dragon {
+                    background-image: url('../img/ic-dragon.svg');
+                }
+                .ic-baron {
+                    background-image: url('../img/ic-baron.svg');
+                }
+                .gold {
+                    margin-left: rem(25);
+                    margin-right: rem(25);
+                    color:#000;
+                }
+                .kill {
+                    color:#000;
+                }
+            }
+            .vs {
+                font-size: rem(30);
+                font-weight: 600;
                 margin: rem(0) rem(20);
-                color:#000;
-            }
-            [class*='ic-'] {
-                width: rem(13);
-                height: rem(13);
-                background-repeat: no-repeat;
-                background-size: cover;
-                margin: rem(0) rem(15);
-                color:#000;
-            }
-            .ic-tower {
-                background-image: url('../img/ic-tower.svg');
-            }
-            .ic-dragon {
-                background-image: url('../img/ic-dragon.svg');
-            }
-            .ic-baron {
-                background-image: url('../img/ic-baron.svg');
-            }
-            .gold {
-                margin-left: rem(25);
-                margin-right: rem(25);
-                color:#000;
-            }
-            .kill {
                 color:#000;
             }
             .ic-arrow {
@@ -447,6 +459,7 @@
                     }
                 }
             }
+            
         }
         .record-detail {
             display:none;
@@ -622,13 +635,6 @@
                     }
                 }
             }
-            .vs {
-                width: rem(150);
-                font-size: rem(30);
-                font-weight: 700;
-                color:#000;
-                margin: auto rem(10);
-            }
         }
     }
 }
@@ -712,6 +718,40 @@
                     > video {
                         width: 100%;
                     }
+                }
+            }
+        }
+        .tit-wrap {
+            justify-content: space-between;
+            .stit {
+                width: 100%;
+                font-size: rem(24);
+                margin-right: unset;
+            }
+            .record-btn {
+                width: 100%;
+                margin-right: unset;
+                margin: rem(0) rem(10);
+                padding: rem(6);
+                font-size: rem(20);
+            }
+            .odds-wrap {
+                width: 100%;
+                justify-content: center;
+                .txt {
+                    margin: unset;
+                    font-size: rem(16);
+                }
+                .odds {
+                    font-size: rem(16);
+                }
+            }
+        }
+        .record-wrap {
+            .record {
+                flex-direction: column;
+                .record-list {
+                    display:flex;
                 }
             }
         }

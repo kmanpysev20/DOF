@@ -608,15 +608,21 @@
   align-items: center;
   color: #000;
 }
-#sectionMain .record-wrap .record .result {
+#sectionMain .record-wrap .record .result-team {
+  display: flex;
+}
+#sectionMain .record-wrap .record .result-team .result {
   margin: 0rem 0.625rem;
   color: #000;
 }
-#sectionMain .record-wrap .record .team {
+#sectionMain .record-wrap .record .result-team .team {
   margin: 0rem 1.25rem;
   color: #000;
 }
-#sectionMain .record-wrap .record [class*=ic-] {
+#sectionMain .record-wrap .record .record-etc {
+  display: flex;
+}
+#sectionMain .record-wrap .record .record-etc [class*=ic-] {
   width: 0.8125rem;
   height: 0.8125rem;
   background-repeat: no-repeat;
@@ -624,21 +630,27 @@
   margin: 0rem 0.9375rem;
   color: #000;
 }
-#sectionMain .record-wrap .record .ic-tower {
+#sectionMain .record-wrap .record .record-etc .ic-tower {
   background-image: url("../img/ic-tower.svg");
 }
-#sectionMain .record-wrap .record .ic-dragon {
+#sectionMain .record-wrap .record .record-etc .ic-dragon {
   background-image: url("../img/ic-dragon.svg");
 }
-#sectionMain .record-wrap .record .ic-baron {
+#sectionMain .record-wrap .record .record-etc .ic-baron {
   background-image: url("../img/ic-baron.svg");
 }
-#sectionMain .record-wrap .record .gold {
+#sectionMain .record-wrap .record .record-etc .gold {
   margin-left: 1.5625rem;
   margin-right: 1.5625rem;
   color: #000;
 }
-#sectionMain .record-wrap .record .kill {
+#sectionMain .record-wrap .record .record-etc .kill {
+  color: #000;
+}
+#sectionMain .record-wrap .record .vs {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0rem 1.25rem;
   color: #000;
 }
 #sectionMain .record-wrap .record .ic-arrow {
@@ -843,13 +855,6 @@
   display: block;
   color: #000;
 }
-#sectionMain .record-wrap .record-detail .vs {
-  width: 9.375rem;
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #000;
-  margin: auto 0.625rem;
-}
 
 @media (max-width: 1024px) {
   #sectionMain .tit > img {
@@ -919,6 +924,38 @@
   }
   #sectionMain .main-swiper .swiper-slide .thumb > video {
     width: 100%;
+  }
+  #sectionMain .tit-wrap {
+    justify-content: space-between;
+  }
+  #sectionMain .tit-wrap .stit {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-right: unset;
+  }
+  #sectionMain .tit-wrap .record-btn {
+    width: 100%;
+    margin-right: unset;
+    margin: 0rem 0.625rem;
+    padding: 0.375rem;
+    font-size: 1.25rem;
+  }
+  #sectionMain .tit-wrap .odds-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+  #sectionMain .tit-wrap .odds-wrap .txt {
+    margin: unset;
+    font-size: 1rem;
+  }
+  #sectionMain .tit-wrap .odds-wrap .odds {
+    font-size: 1rem;
+  }
+  #sectionMain .record-wrap .record {
+    flex-direction: column;
+  }
+  #sectionMain .record-wrap .record .record-list {
+    display: flex;
   }
 }
 /* ================================== Icon ================================== */
