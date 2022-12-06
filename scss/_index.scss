@@ -387,9 +387,20 @@
             color:#000;
             .result-team {
                 display:flex;
+                &.mo {
+                    display:none;
+                }
                 .result {
                     margin: rem(0) rem(10);
                     color:#000;
+                    &.win {
+                        color:blue;
+                        font-weight: 700;
+                    }
+                    &.lose {
+                        color:red;
+                        font-weight: 700;
+                    }
                 }
                 .team {
                     margin: rem(0) rem(20);
@@ -459,179 +470,213 @@
                     }
                 }
             }
-            
         }
-        .record-detail {
+        .detail {
             display:none;
-            margin-top: rem(20);
-            background: #fff;
-            padding: rem(40) rem(20);
-            .record-detail-sub {
-                display:flex;
-                margin: rem(5) rem(0);
-            }
-
             &.is-open {
                 display:flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: column;
+                background: #fff;
             }
-            .record-detail-wrap {
-                width: 100%;
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: rem(6) rem(60);
-                &.win {
-                    background: #ecf2ff;
-                }
-                &.lose {
-                    background: #feeeed;
-                }
-                .item-wrap {
-                    width: rem(70);
-                    display:flex;
-                    flex-wrap: wrap;
-                    justify-content:center;
-                    align-items: center;
-                    .txt {
-                        width: 100%;
-                        font-size: rem(12);
-                        font-weight: 700;
-                        color:#000;
-                        margin: rem(8) rem(0);
-                        
-                    }
-                    > img {
-                        width: rem(18);
-                        border-radius: rem(2);
-                        margin: rem(2);
-                    }
-                }
-                .kda-cs {
-                    display:flex;
-                    flex-direction: column;
-                    font-size: rem(12);
-                    .txt {
-                        color:#000;
-                        margin: rem(8) rem(0);
-                        font-weight: 700;
-                    }
-                    .kda {
-                        color:#000;
-                        margin-bottom: rem(3);
-                        .kda-death {
-                            color:#f9a5a0;
-                        }
-                    }
-                    .kda-point {
-                        color:#000;
-                        margin-bottom: rem(3);
-                    }
-                    .cs {
-                        color: #000;
-                        margin-bottom: rem(3);
-                        .cs-divide {
-                            font-size: rem(12);
-                            color:#000;
-                        }
-                    }
-                }
-                .dam-redam {
-                    display:flex;
-                    flex-direction: column;
-                    font-size: rem(12);
-                    .txt {
-                        color:#000;
-                        margin: rem(8) rem(0);
-                        font-weight: 700;
-                    }
-                    .num {
-                        color:#000;
-                    }
-                    .progress {
-                        display:block;
-                        width: rem(50);
-                        height: rem(6);
-                        margin: rem(4) auto rem(4);
-                        background-color: #fff;
-                        border-radius: rem(10);
-                        .fill {
-                            display:block;
-                            width: 10%;
-                            height: 100%;
-                            border-radius: rem(10);
-                            background-color: #f4584e;
-                        }
-                    }
-                }
-                .id-info {
-                    display:flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: rem(12);
-                    .txt {
-                        color:#000;
-                        margin: rem(8) rem(0);
-                        font-weight: 700;
-                    }
-                    .id {
-                        color:#000;
-                    }
-                    .id-wrap {
+            .detail-lo {
+                margin: rem(0) rem(20);
+                .detail-wrap {
+                    .detail-list {
+                        width: rem(400);
+                        position: relative;
                         display:flex;
                         justify-content: center;
-                        align-items: center;
-                        > img {
-                            width: rem(36);
-                            height: rem(36);
-                            border-radius: rem(2);
+                        margin: rem(20) rem(10);
+                        padding:rem(10) rem(0);
+                        &.win {
+                            &::after {
+                                position: absolute;
+                                content: 'V S';
+                                font-size: rem(20);
+                                font-weight: 600;
+                                color:#000;
+                                top:45%;
+                                right:-11%;
+                            }
                         }
-                        .spell-rhun-wrap {
+
+                        &.win {
+                            background: #ecf2ff;
+                        }
+                        &.lose {
+                            background: #fff1f3;
+                        }
+                        .item-info {
                             display:flex;
                             flex-direction: column;
-                            .id-spell {
-                                display:flex;
-                                > img {
-                                    width: rem(14);
-                                    height: rem(14);
-                                    border-radius: rem(2);
-                                    margin: rem(3);
-                                }
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            .tit {
+                                font-size: rem(12);
+                                font-weight: 700;
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
                             }
-                            .id-rhun {
-                                display:flex;
+                            .item-img {
+                                display:inline-block;
+                                width: rem(90);
                                 > img {
-                                    width: rem(14);
-                                    height: rem(14);
-                                    border-radius: rem(2);
-                                    margin: rem(3);
-                                    background: #000;
+                                    width: rem(18);
+                                    height: rem(18);
+                                    margin: rem(3) rem(1);
+                                    border-radius: rem(4);
                                 }
                             }
                         }
-                    }
-                }
-                .carry {
-                    font-size: rem(12);
-                    .tit {
-                        color:#000;
-                        display:block;
-                        margin : rem(8) rem(0);
-                        font-weight: 700;
-                    }
-                    .grade {
-                        display:block;
-                        border: rem(1) solid #000;
-                        padding: rem(2);
-                        color:#000;
-                        margin-bottom: rem(6);
-                    }
-                    .carry-divide {
-                        display:block;
-                        color:#000;
+                        .kda-cs {
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 100%;
+                            .tit {
+                                font-size: rem(12);
+                                font-weight: 700;
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
+                            }
+                            .kda {
+                                font-size: rem(12);
+                                color:#000;
+                                margin: rem(0) rem(0) rem(3);
+                            }
+                            .kda-div {
+                                font-size: rem(12);
+                                color:#000;
+                                margin: rem(3) rem(0);
+                            }
+                            .cs {
+                                font-size: rem(12);
+                                color:#000;
+                                margin: rem(3) rem(0);
+                            }
+                        }
+                        .dam-damrec {
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 100%;
+                            .tit {
+                                font-size: rem(12);
+                                font-weight: 700;
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
+                            }
+                            .dam {
+                                font-size: rem(12);
+                                margin : rem(0) rem(0) rem(3);
+                                color:#000;
+                            }
+                            .progress {
+                                width: rem(50);
+                                height: rem(6);
+                                margin: rem(4) auto rem(6);
+                                background-color: #ffffff;
+                                border-radius: rem(2);
+                                .dam-fill {
+                                    display:block;
+                                    width: 38%;
+                                    height: 100%;
+                                    background-color: #e84057;
+                                    border-radius: rem(2);
+                                }
+                            }
+
+                            .damrec {
+                                font-size: rem(12);
+                                margin : rem(0) rem(0) rem(3);
+                                color:#000;
+                            }
+                            .progress {
+                                width: rem(50);
+                                height: rem(6);
+                                margin: rem(4) auto rem(6);
+                                background-color: #ffffff;
+                                border-radius: rem(2);
+                                .damrec-fill {
+                                    display:block;
+                                    width: 38%;
+                                    height: 100%;
+                                    background-color: #e84057;
+                                    border-radius: rem(2);
+                                }
+                            }
+                        }
+                        .id-info {
+                            width: 100%;
+                            .tit {
+                                font-size: rem(12);
+                                font-weight: 700;
+                                color:#000;
+                                margin : rem(0) rem(0) rem(7);
+                            }
+                            .id {
+                                font-size: rem(12);
+                                color:#000;
+                            }
+                            .id-wrap {
+                                display:flex;
+                                align-items: center;
+                                margin: rem(10) rem(0);
+                                > img {
+                                    width: rem(40);
+                                    height: rem(40);
+                                    border-radius: rem(4);
+                                }
+                                .id-etc {
+                                    text-align: center;
+                                    .id-spell {
+                                        display:flex;
+                                        justify-content: center;
+                                        > img {
+                                            width: rem(16);
+                                            height: rem(16);
+                                            margin: rem(4);
+                                            border-radius: rem(4);
+                                        }
+                                    }
+                                    .id-rhun {
+                                        display:flex;
+                                        justify-content: center;
+                                        > img {
+                                            width: rem(16);
+                                            height: rem(16);
+                                            margin: rem(4);
+                                            background-color: #000;
+                                            border-radius: rem(4);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .carry {
+                            width: 100%;
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .tit {
+                                font-size: rem(12);
+                                font-weight: 700;
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
+                            }
+                            .grade {
+                                font-size: rem(12);
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
+                            }
+                            .carry-divide {
+                                font-size: rem(12);
+                                color:#000;
+                                margin : rem(0) rem(0) rem(10);
+                            }
+                        }
                     }
                 }
             }
@@ -750,8 +795,69 @@
         .record-wrap {
             .record {
                 flex-direction: column;
+                .ic-arrow {
+                    margin: rem(20) rem(0);
+                }
                 .record-list {
                     display:flex;
+                    margin: rem(5) rem(0);
+                    .record-item {
+                        .id {
+                            margin: rem(0) rem(8);
+                        }
+                    }
+                }
+                .result-team {
+                    margin: rem(5) rem(0);
+                    &.mo {
+                        display:flex;
+                    }
+                    &.pc {
+                        display:none;
+                    }
+                }
+                .record-etc {
+                    margin: rem(5) rem(0);
+                    &.mo {
+                        flex-direction: row-reverse;
+                    }
+                }
+                .vs {
+                    margin: rem(10) rem(0);
+                }
+            }
+            .detail {
+                &.is-open {
+                    flex-direction: column;
+                }
+                .detail-lo {
+                    position: relative;
+                    margin: rem(20) rem(10);
+                    .detail-wrap {
+                        display:flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .detail-list {
+                            width: 100%;
+                            margin: rem(10) rem(10);
+                            &.win {
+                                &::after {
+                                    display:none;
+                                }
+                            }
+                        }
+                    }
+                    &.left {
+                        &::after {
+                            position: absolute;
+                            content: 'V S';
+                            font-size: rem(24);
+                            font-weight: 600;
+                            color:#000;
+                            left:42%;
+                            bottom:-3.5%;
+                        }
+                    }
                 }
             }
         }
