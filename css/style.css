@@ -569,8 +569,12 @@
 #sectionMain .tit-wrap .record-btn:hover {
   opacity: 0.8;
 }
+#sectionMain .tit-wrap .record-btn .br-re {
+  display: none;
+}
 #sectionMain .tit-wrap .odds-wrap {
   display: flex;
+  align-items: center;
   border: 0.125rem solid #fff;
   border-radius: 0.625rem;
   padding: 0.625rem;
@@ -984,19 +988,24 @@
   }
   #sectionMain .tit-wrap .odds-wrap {
     width: 100%;
+    flex-direction: column;
+    line-height: 1.5625rem;
     justify-content: center;
   }
   #sectionMain .tit-wrap .odds-wrap .txt {
     margin: unset;
-    font-size: 1rem;
+    margin-left: 0.375rem;
+    font-size: 1.25rem;
   }
   #sectionMain .tit-wrap .odds-wrap .odds {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   #sectionMain .record-wrap .record {
     flex-direction: column;
   }
   #sectionMain .record-wrap .record .ic-arrow {
+    width: 3.75rem;
+    height: 3.75rem;
     margin: 1.25rem 0rem;
   }
   #sectionMain .record-wrap .record .record-list {
@@ -1030,6 +1039,8 @@
   #sectionMain .record-wrap .detail .detail-lo {
     position: relative;
     margin: 1.25rem 0.625rem;
+    width: 100%;
+    padding: 0rem 1.25rem;
   }
   #sectionMain .record-wrap .detail .detail-lo .detail-wrap {
     display: flex;
@@ -1042,6 +1053,55 @@
   }
   #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list.win::after {
     display: none;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .item-info {
+    margin: 0rem 0.25rem;
+    justify-content: flex-start;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .item-info .item-img {
+    width: 3rem;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .kda-cs {
+    margin: 0rem 0.25rem;
+    justify-content: flex-start;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .kda-cs .tit {
+    margin-bottom: 0.75rem;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .dam-damrec {
+    margin: 0rem 0.25rem;
+    justify-content: flex-start;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .dam-damrec .progress {
+    width: 2.375rem;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .id-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem 0.25rem;
+    justify-content: flex-start;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .id-info .id-wrap {
+    flex-direction: column;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .id-info .id-wrap > img {
+    width: 1.875rem;
+    height: 100%;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .id-info .id-wrap .id-etc .id-spell > img {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0.25rem 0.0625rem;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .id-info .id-wrap .id-etc .id-rhun > img {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0rem 0.125rem 0.0625rem;
+  }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .carry {
+    justify-content: flex-start;
+    margin: 0rem 0.25rem;
   }
   #sectionMain .record-wrap .detail .detail-lo.left::after {
     position: absolute;

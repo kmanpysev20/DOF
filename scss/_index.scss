@@ -345,10 +345,14 @@
             &:hover {
                 opacity: 0.8;
             }
+            .br-re {
+                display:none;
+            }
         }
 
         .odds-wrap {
             display:flex;
+            align-items: center;
             border: rem(2) solid #fff;
             border-radius: rem(10);
             padding: rem(10);
@@ -782,13 +786,16 @@
             }
             .odds-wrap {
                 width: 100%;
+                flex-direction: column;
+                line-height: rem(25);
                 justify-content: center;
                 .txt {
                     margin: unset;
-                    font-size: rem(16);
+                    margin-left: rem(6);
+                    font-size: rem(20);
                 }
                 .odds {
-                    font-size: rem(16);
+                    font-size: rem(20);
                 }
             }
         }
@@ -796,6 +803,8 @@
             .record {
                 flex-direction: column;
                 .ic-arrow {
+                    width: rem(60);
+                    height: rem(60);
                     margin: rem(20) rem(0);
                 }
                 .record-list {
@@ -833,6 +842,8 @@
                 .detail-lo {
                     position: relative;
                     margin: rem(20) rem(10);
+                    width: 100%;
+                    padding: rem(0) rem(20);
                     .detail-wrap {
                         display:flex;
                         flex-direction: column;
@@ -844,6 +855,61 @@
                                 &::after {
                                     display:none;
                                 }
+                            }
+                            .item-info {
+                                margin: rem(0) rem(4);
+                                justify-content: flex-start;
+                                .item-img {
+                                    width: rem(48);
+                                }
+                            }
+                            .kda-cs {
+                                margin: rem(0) rem(4);
+                                justify-content: flex-start;
+                                .tit {
+                                    margin-bottom: rem(12);
+                                }
+                            }
+                            .dam-damrec {
+                                margin: rem(0) rem(4);
+                                justify-content: flex-start;
+                                .progress {
+                                    width: rem(38);
+                                }
+                            }
+                            .id-info {
+                                display:flex;
+                                flex-direction: column;
+                                align-items: center;
+                                margin: rem(0) rem(4);
+                                justify-content: flex-start;
+                                .id-wrap {
+                                    flex-direction: column;
+                                    > img {
+                                        width: rem(30);
+                                        height: 100%;
+                                    }
+                                    .id-etc {
+                                        .id-spell {
+                                            > img {
+                                                width: rem(14);
+                                                height: rem(14);
+                                                margin: rem(4) rem(1);
+                                            }
+                                        }
+                                        .id-rhun {
+                                            > img {
+                                                width: rem(14);
+                                                height: rem(14);
+                                                margin: rem(0) rem(2) rem(1);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .carry {
+                                justify-content: flex-start;
+                                margin: rem(0) rem(4);
                             }
                         }
                     }
