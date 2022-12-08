@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="../css/jquery-ui.min.css">
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jquery.fullpage.min.css">
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/jquery.fullpage.min.js"></script>
 </head>
 <body>
 
@@ -51,34 +53,48 @@
 
     <main id = "container" class= "main-cont">
         <!-- sectionMain [s] -->
-        <section class = "main-section" id="sectionIntro">
+    <ul id="fullpage-menu">
+        <li data-menuanchor="firstMember">
+            <div class="anchor-wrap">
+                <a href="#firstMember">
+                    <img src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4904.jpg?image=q_auto,f_webp,w_auto&v=1670399721992" alt="">
+                    <span>dvis</span>
+                </a>
+            </div>
+        </li>
+        <li data-menuanchor="secondMember">
+            <div class="anchor-wrap">
+                <a href="#secondMember">
+                    <img src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4904.jpg?image=q_auto,f_webp,w_auto&v=1670399721992" alt="">
+                    <span>Moyar</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <div id = "fullpage">
+        <section class = "main-section section" id="sectionMember" data-anchor="firstMember">
             <div class="inner">
                 <div class="contents">
-                    <h2 class="tit">DOF INTRO</h2>
-                    <div class="cont-wrap">
-                        <div class="left">
-                            <video src="../video/video-do1.mp4" autoplay loop muted controls preload="true"></video>
-                            <span>X</span>
-                            <video src="../video/lol.mp4" autoplay loop muted controls preload="true"></video>
-                        </div>
-                        <div class="right">
-                            <p class="txt">
-                                <strong>Doo One Friends</strong> <br><br class="intro-br">
-    
-                                DOF는 2007년 처음 만나 현재까지 이어온 우정을<br class="intro-br">
-                                LOL라는 게임을 통해 다시한번 녹여내여 돈독한 우정(?)을<br class="intro-br">
-                                쌓기 위해 DOF 라는 팀을 창설하게 되었다.<br class="intro-br">
-                                (Holy...)<br>
-                            </p>
-                        </div>
+                    <div>
+                        <h2 class="tit">MEMBER</h2>
                     </div>
                 </div>
+            </div>
         </section>
+        <section class = "main-section section" id="sectionMember2">
+            <div class="inner">
+                <div class="contents">
+                    <h2 class="tit">MEMBE2</h2>
+                </div>
+            </div>
+        </section>
+    </div>
         <!-- sectionMain [e] -->
     </main>
 
     <!-- footer[s] -->
-    <footer id="footer" class="main-footer">
+    <footer id="footer" class="main-footer fullpage">
         <div class="inner">
             <p class="copy-logo">
                 <a href="#."><i class="ic ic-logo"></i></a>
@@ -97,7 +113,11 @@
 <!-- script [s]-->
 <script src="js/swiper.min.js"></script>
 <script>
-
+$(function() {
+    $("#fullpage").fullpage({
+    anchors: ["firstMember", "secondMember"]
+    });
+});
 </script>
 <!-- script [e]-->
 

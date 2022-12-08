@@ -4,6 +4,10 @@
 	height: rem(180);
 	padding: rem(40) rem(40);
     background-color: #1a2316;
+    &.fullpage {
+        position: fixed;
+        bottom:0;
+    }
     .inner {
         display:flex;
         flex-direction: column;
