@@ -280,6 +280,7 @@
                 video {
                     width: rem(300);
                     height: rem(165);
+                    cursor: pointer;
                 }
                 .tit {
                     width: 100%;
@@ -811,6 +812,7 @@
                     display:flex;
                     margin: rem(5) rem(0);
                     .record-item {
+                        margin: rem(6) rem(4);
                         .id {
                             margin: rem(0) rem(8);
                         }

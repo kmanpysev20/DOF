@@ -505,6 +505,7 @@
 #sectionMain .main-swiper .swiper-slide .thumb video {
   width: 18.75rem;
   height: 10.3125rem;
+  cursor: pointer;
 }
 #sectionMain .main-swiper .swiper-slide .thumb .tit {
   width: 100%;
@@ -1012,6 +1013,9 @@
     display: flex;
     margin: 0.3125rem 0rem;
   }
+  #sectionMain .record-wrap .record .record-list .record-item {
+    margin: 0.375rem 0.25rem;
+  }
   #sectionMain .record-wrap .record .record-list .record-item .id {
     margin: 0rem 0.5rem;
   }
@@ -1131,6 +1135,113 @@
   background-image: url("../img/ic-video-right.png");
 }
 
+#sectionIntro {
+  min-height: 0rem;
+}
+#sectionIntro .tit {
+  margin-bottom: 2.5rem;
+  font-size: 2.375rem;
+  font-weight: bold;
+}
+#sectionIntro .cont-wrap {
+  display: flex;
+}
+#sectionIntro .cont-wrap .left {
+  width: 100%;
+}
+#sectionIntro .cont-wrap .left > video {
+  width: 100%;
+  border-radius: 1.25rem;
+  margin: 1.25rem 0rem;
+}
+#sectionIntro .cont-wrap .left > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+#sectionIntro .cont-wrap .right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5rem;
+}
+#sectionIntro .cont-wrap .right .txt {
+  text-align: left;
+  line-height: 2.5rem;
+  border: 0.125rem solid #fff;
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+}
+#sectionIntro .cont-wrap .right .txt > strong {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  #sectionIntro {
+    padding: 2.5rem 2.5rem;
+  }
+  #sectionIntro .cont-wrap {
+    display: block;
+  }
+  #sectionIntro .cont-wrap .left > span {
+    font-size: 1.75rem;
+  }
+  #sectionIntro .cont-wrap .right {
+    margin-left: unset;
+  }
+  #sectionIntro .cont-wrap .right .txt {
+    font-size: 0.875rem;
+  }
+  #sectionIntro .cont-wrap .right .txt .intro-br {
+    display: none;
+  }
+}
+#sectionService .tit {
+  margin-bottom: 2.5rem;
+  font-size: 2.375rem;
+  font-weight: bold;
+  text-align: left;
+}
+#sectionService .service-cont {
+  background: #FFFFFF;
+  border: 0.25rem solid #fff;
+  border-radius: 1.25rem;
+  text-align: left;
+  padding: 2.5rem;
+}
+#sectionService .service-cont .dt {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.125rem solid #D2D6DA;
+  margin-top: 3.75rem;
+}
+#sectionService .service-cont .dt:nth-of-type(1) {
+  margin-top: 1.25rem;
+}
+#sectionService .service-cont .dd {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  color: #000;
+  line-height: 1.625rem;
+}
+
+@media (max-width: 1024px) {
+  #sectionService {
+    padding: 2.5rem 2.5rem;
+  }
+  #sectionService .tit {
+    font-size: 1.75rem;
+  }
+  #sectionService .service-cont .dt {
+    font-size: 1.25rem;
+  }
+  #sectionService .service-cont .dd {
+    font-size: 1rem;
+  }
+}
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
