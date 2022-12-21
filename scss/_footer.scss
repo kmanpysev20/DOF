@@ -42,3 +42,27 @@
         }
     }
 }
+
+@media (max-width: 1024px) { 
+    #footer{
+        height: rem(148);
+        .inner {
+            .copy-logo {
+                > a {
+                    .ic-logo {
+                        width: rem(100);
+                        height: rem(36);
+                    }
+                }
+            }
+            .copy-txt {
+                .txt {
+                    font-size: rem(12);
+                }
+                .txt-link {
+                    font-size: rem(12);
+                }
+            }
+        }
+    }
+}

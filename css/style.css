@@ -129,9 +129,16 @@
 }
 
 @media (max-width: 1024px) {
+  #header {
+    height: 5.625rem;
+  }
   #header .logo {
     z-index: 9999;
     margin-right: auto;
+  }
+  #header .logo > a {
+    width: 6.25rem;
+    height: 3.125rem;
   }
   #header.is-gnb .inner::before {
     opacity: 1;
@@ -143,6 +150,10 @@
   }
   #header .btn-gnb {
     display: block;
+  }
+  #header .btn-gnb .ic-gnb-open {
+    width: 2rem;
+    height: 2rem;
   }
   #header #gnb {
     position: fixed;
@@ -249,6 +260,21 @@
   color: #fff;
 }
 
+@media (max-width: 1024px) {
+  #footer {
+    height: 9.25rem;
+  }
+  #footer .inner .copy-logo > a .ic-logo {
+    width: 6.25rem;
+    height: 2.25rem;
+  }
+  #footer .inner .copy-txt .txt {
+    font-size: 0.75rem;
+  }
+  #footer .inner .copy-txt .txt-link {
+    font-size: 0.75rem;
+  }
+}
 #sectionMain {
   min-height: 0rem;
 }
@@ -1446,7 +1472,7 @@
     margin-bottom: 1.25rem;
   }
   #sectionMember .wrap .pic-wrap > img {
-    max-width: 7.5rem;
+    max-width: 6.25rem;
     height: unset;
   }
   #sectionMember .wrap .cont-wrap .tit {
