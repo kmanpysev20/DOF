@@ -15,6 +15,7 @@
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/common.js"></script>
+
 </head>
 <body>
 
@@ -30,7 +31,7 @@
                 <li class="menu-btn"><a href="./subpage/intro.html">INTRO</a></li>
                 <li class="menu-btn"><a href="./subpage/member.html">MEMBER</a></li>
                 <li class="menu-btn"><a href="#.">TIP</a></li>
-                <li class="menu-btn"><a href="#.">BORDER</a></li>
+                <li class="menu-btn popup-open" data-popup="info-pop"><a href="#.">BORDER</a></li>
                 <!-- <li class="menu-btn"><a href="#.">RECRUIT</a></li> -->
             </ul>
             <button type="button" class="btn btn-gnb"><i class="ic ic-gnb-open"></i></button>
@@ -42,7 +43,7 @@
                 <li><a href="./subpage/intro.html" class="txt">INTRO</a></li>
                 <li><a href="./subpage/member.html" class="txt">MEMBER</a></li>
                 <li><a href="#." class="txt">TIP</a></li>
-                <li><a href="#." class="txt">BORDER</a></li>
+                <li><a href="#." class="txt popup-open" data-popup="info-pop">BORDER</a></li>
                 <!-- <li><a href="#." class="txt">RECRUIT</a></li> -->
             </ul>
         </nav>
@@ -1361,6 +1362,21 @@
 </div>
 <!-- wrap [e] -->
 
+<!-- info popup[s] -->
+<div class="modal-container">
+    <div class="pop-wrap" id="info-pop">
+        <div class="infopop">
+            <div class="pop-cont">
+                <div class="pop-head">
+                    <p class="pop-txt">오픈 예정</p>
+                    <button class="pop-close-btn">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- info popup[e] -->
+
 <!-- script [s]-->
 <script src="js/swiper.min.js"></script>
 <script>
@@ -1424,6 +1440,18 @@ window.addEventListener('scroll', function(event) {
 dofswiper()
 }, true);
 
+// popup
+function popupControl() {
+    $(".popup-open").on('click', function () {
+        const popId = $(this).data('popup');
+        $("#"+popId).css('display', 'flex').hide().fadeIn('fast');
+        console.log(popId);
+    });
+    $(".pop-close-btn").on('click', function () {
+        $(this).parents('.pop-wrap').fadeOut();
+    });
+};
+popupControl();
 
 </script>
 <!-- script [e]-->
