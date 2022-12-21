@@ -71,7 +71,7 @@
                     padding: rem(10) 0;
                     text-decoration: underline;
                     &:hover {
-                        color: #707070;
+                        color: yellow;
                     }
                 }
             }
@@ -487,6 +487,7 @@
             .detail-lo {
                 margin: rem(0) rem(20);
                 .detail-wrap {
+                    position: relative;
                     .detail-list {
                         width: rem(400);
                         position: relative;
@@ -494,7 +495,7 @@
                         justify-content: center;
                         margin: rem(20) rem(10);
                         padding:rem(10) rem(0);
-                        &.win {
+                        &.detail-list-left {
                             &::after {
                                 position: absolute;
                                 content: 'V S';
