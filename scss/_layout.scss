@@ -32,3 +32,9 @@
         height: auto;
     }
 }
+
+@media (max-width: 1024px) {
+    #container {
+        padding-top: rem(116);
+    }
+}

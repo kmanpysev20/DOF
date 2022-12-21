@@ -215,6 +215,11 @@
   height: auto;
 }
 
+@media (max-width: 1024px) {
+  #container {
+    padding-top: 7.25rem;
+  }
+}
 #footer {
   position: relative;
   width: 100%;
@@ -1212,7 +1217,7 @@
 
 @media (max-width: 1024px) {
   #sectionIntro {
-    padding: 2.5rem 2.5rem;
+    padding: 1.25rem 2.5rem;
   }
   #sectionIntro .cont-wrap {
     display: block;
@@ -1458,6 +1463,9 @@
 }
 
 @media (max-width: 1024px) {
+  #sectionMember {
+    padding: 1.25rem 2.5rem;
+  }
   #sectionMember .tit-mo {
     display: block;
     font-size: 1.75rem;
@@ -1485,6 +1493,7 @@
   #fullpage-menu {
     align-items: center;
     padding: 0rem 1.25rem;
+    bottom: 18%;
   }
   #fullpage-menu > li > a > img {
     width: 0.75rem;
