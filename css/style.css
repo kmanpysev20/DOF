@@ -1096,6 +1096,9 @@
   #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list.win::after {
     display: none;
   }
+  #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list.lose::after {
+    display: none;
+  }
   #sectionMain .record-wrap .detail .detail-lo .detail-wrap .detail-list .item-info {
     margin: 0rem 0.25rem;
     justify-content: flex-start;
@@ -1151,7 +1154,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #000;
-    left: 42%;
+    left: 48%;
     bottom: -3.5%;
   }
 }
