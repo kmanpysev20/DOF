@@ -1,0 +1,49 @@
+#sectionService {
+    .tit {
+        margin-bottom: rem(40);
+        font-size: rem(38);
+        font-weight: bold;
+        text-align: left;
+    }
+    .service-cont {
+        background: #FFFFFF;
+        border: rem(4) solid #fff;
+        border-radius: rem(20);
+        text-align: left;
+        padding: rem(40);
+        .dt {
+            font-size: rem(28);
+            font-weight: bold;
+            color:#000;
+            padding-bottom: rem(20);
+            border-bottom: rem(2) solid #D2D6DA;
+            margin-top: rem(60);
+            &:nth-of-type(1) {
+                margin-top: rem(20);
+            }
+        }
+        .dd {
+            margin-top: rem(20);
+            font-size: rem(18);
+            color:#000;
+            line-height: rem(26);
+        }
+    }
+}
+
+@media (max-width: 1024px) { 
+    #sectionService {
+        padding:rem(40) rem(40);
+        .tit {
+            font-size: rem(28);
+        }
+        .service-cont {
+            .dt {
+                font-size: rem(20);
+            }
+            .dd {
+                font-size: rem(16);
+            }
+        }
+    }
+}

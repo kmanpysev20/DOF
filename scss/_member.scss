@@ -1,0 +1,291 @@
+// fullpage menu
+#fullpage-menu {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    bottom:22%;
+    > li {
+        margin: rem(0) rem(12);
+        > a {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            &:hover > span {
+                color: yellow
+            }
+            > img {
+                border-radius: rem(4);
+                width: rem(20);
+                height: rem(20);
+                margin-right: rem(3);
+            }
+            > span {
+                font-size: rem(14);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.member-section {
+    padding : rem(0);
+}
+
+#sectionMember {
+    // padding: rem(0) rem(40);
+    .tit-mo {
+        display:none;
+    }
+
+    .wrap {
+        display:flex;
+        justify-content: space-around;
+        // align-items: center;
+        padding: rem(20) rem(40);
+        .pic-wrap {
+            > img {
+                width: rem(360);
+                height: rem(360);
+                border-radius: rem(15);
+            }
+        }
+        .cont-wrap {
+            text-align: left;
+            .tit {
+                text-align: center;
+                font-size: rem(42);
+                font-weight: bold;
+                margin-bottom: rem(15);
+            }
+            .info {
+                line-height: rem(42);
+                font-size: rem(20);
+                .po-txt {
+                    .po-txt2 {
+                        position: relative;
+                        &.top {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: rem(26);
+                                height: rem(26);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url("../img/ic-top.svg");
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.jg {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: rem(26);
+                                height: rem(26);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url("../img/ic-jg.svg");
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.mid {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: rem(26);
+                                height: rem(26);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url("../img/ic-mid.svg");
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.ad {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: rem(26);
+                                height: rem(26);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url("../img/ic-ad.png");
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.sp {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: rem(26);
+                                height: rem(26);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url("../img/ic-sp.svg");
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                    }
+                }
+                .tier-txt {
+                    .tier-txt2 {
+                        position: relative;
+                        &.iron {
+                            color : #4f322d;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-iron.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.bronze {
+                            color : #62413c;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-bronze.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.silver {
+                            color : silver;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-silver.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.gold {
+                            color : gold;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-gold.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.platinum {
+                            color : #29a07d;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-platinum.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                        &.diamond {
+                            color : #2d5cc9;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: rem(30);
+                                height: rem(30);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-image: url('../img/ic-diamond.png');
+                                margin-left: rem(5);
+                                top:rem(-7);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .member-main-cont {
+        display:flex;
+        justify-content: center;
+    }
+
+    #sectionMember {
+        // padding:rem(5) rem(40);
+        .tit-mo {
+            display:block;
+            font-size: rem(28);
+            font-weight: bold;
+            margin-bottom: rem(30);
+        }
+        .wrap {
+            justify-content: center;
+            flex-direction: column;
+            padding: unset;
+            .pic-wrap {
+                margin-bottom: rem(14);
+                > img {
+                    max-width: rem(120);
+                    height: unset;
+                }
+            }
+            .cont-wrap {
+                .tit {
+                    display:none;
+                }
+                .info {
+                    text-align: center;
+                    line-height: rem(24);
+                    font-size: rem(12);
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    #fullpage-menu {
+        align-items: center;
+        bottom:16%;
+        height: rem(70);
+        flex-wrap: wrap;
+        border: rem(1) solid white;
+        border-radius: rem(10);
+        margin-bottom: rem(10);
+        width: 77%;
+        > li {
+            margin : unset;
+            > a {
+              > img {
+                width: rem(12);
+                height: rem(12);
+              }  
+              > span {
+                width: rem(50);
+                font-size: rem(12);
+              }
+            }
+        }
+    }
+}

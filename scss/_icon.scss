@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* ================================== Icon ================================== */
+.ic {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	&.nav-prev-white {
+		width: rem(30);
+		height: rem(30);
+		background-image: url("../img/ic-video-left.png");
+	}
+	&.nav-next-white {
+		width: rem(30);
+		height: rem(30);
+		background-image: url("../img/ic-video-right.png");
+	}
+}

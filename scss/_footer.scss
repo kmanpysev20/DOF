@@ -1,0 +1,68 @@
+#footer{
+    position: relative;
+    width: 100%;
+	height: rem(180);
+	padding: rem(40) rem(40);
+    background-color: #1a2316;
+    &.fullpage {
+        position: fixed;
+        bottom:0;
+    }
+    .inner {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding-top : rem(40);
+        border-top: rem(2) solid #fff;
+        .copy-logo {
+            margin-bottom: rem(10);
+            .ic-logo {
+                display:block;
+                width: rem(110);
+                height: rem(40);
+                background: url('../img/logo.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .copy-txt {
+            display:inline-block;
+            .txt {
+                font-size: rem(16);
+                font-weight: 400;
+                color:#fff;
+            }
+        }
+        .txt-link {
+            display:inline-block;
+            margin: 0 rem(15);
+            text-decoration: underline;
+            color:#fff;
+        }
+    }
+}
+
+@media (max-width: 1024px) { 
+    #footer{
+        height: rem(148);
+        .inner {
+            .copy-logo {
+                > a {
+                    .ic-logo {
+                        width: rem(100);
+                        height: rem(36);
+                    }
+                }
+            }
+            .copy-txt {
+                .txt {
+                    font-size: rem(12);
+                }
+                .txt-link {
+                    font-size: rem(12);
+                }
+            }
+        }
+    }
+}

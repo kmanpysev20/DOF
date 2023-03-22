@@ -1,0 +1,130 @@
+//header
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: rem(120);
+	padding: 0 rem(40);
+	z-index: 100;
+    background: #1a2316;
+    .header-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: rem(1320);
+        border-bottom: rem(2) solid #fff;
+    }
+    .logo {
+        position: relative;
+        margin-right: rem(30);
+        a {
+            display:block;
+            width: rem(110);
+            height: rem(60);
+            background: url('../img/logo-italic.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+    .menu-list {
+        width: 100%;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        .menu-btn {
+            a {
+                font-size: rem(18);
+                font-weight: 600;
+                color: #FFF;
+            }
+        }
+    }
+    .inner:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.4s ease-out;
+    }
+
+    .btn-gnb {
+        display:none;
+        cursor: pointer;
+        .ic-gnb-open {
+            width: rem(40);
+            height: rem(40);
+            background-image: url('../img/ic-menu.png');
+        }
+    }
+    #gnb {
+        display:none;
+    }
+}
+
+@media (max-width: 1024px) { 
+    #header {
+        height: rem(90);
+        .logo {
+            z-index: 9999;
+            margin-right: auto;
+            > a {
+                width: rem(100);
+                height: rem(50);
+            }
+        }
+        &.is-gnb .inner::before {
+            opacity: 1;
+            z-index: 9998;
+            transform: translateY(0);
+        }
+        .menu-list {
+            display:none;
+        }
+        .btn-gnb {
+            display:block;
+            .ic-gnb-open {
+                width: rem(32);
+                height: rem(32);
+            }
+        }
+        #gnb {
+            position: fixed;
+            width: 100%;
+            &.is-gnb {
+                display:block;
+                z-index: 9999;
+            }
+            .btn-gnb-close {
+                position: absolute;
+                top:rem(-64);
+                right:rem(80);
+                cursor: pointer;
+                width: rem(40);
+                height: rem(40);
+                .ic-gnb-close {
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../img/ic-popup-Close.png');
+                }
+            }
+            .gnb-list {
+                >li {
+                    margin: rem(40) rem(0);
+                    .txt {
+                        font-size: rem(20);
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

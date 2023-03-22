@@ -1,0 +1,43 @@
+//wrap
+#wrap {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+//inner
+.inner {
+	position: relative;
+	max-width: rem(1320);
+    height: 100%;
+	margin: 0 auto;
+	z-index: 10;
+}
+
+//container
+#container {
+    flex-grow: 1;
+	padding-top: rem(150);
+    background-color: #1a2316;
+}
+
+//main-section
+.main-section {
+    position: relative;
+    min-height: 100vh;
+    padding: rem(100) rem(40);
+    text-align: center;
+    .contents {
+        display: block;
+        height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    #container {
+        padding-top: rem(116);
+        #sectionMain {
+            padding: rem(40);
+        }
+    }
+}
