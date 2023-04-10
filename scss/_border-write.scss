@@ -1,0 +1,58 @@
+#sectionBorder-write {
+    padding: rem(40) rem(40);
+    min-height: 0;
+    .inner {
+        .contents {
+            .tit {
+                font-size: rem(38);
+                font-weight: bold;
+                margin-bottom: rem(50);
+                color : powderblue
+            }
+            .btn-wrap {
+                display:flex;
+                justify-content: flex-end;
+                .regis {
+                    margin-right: rem(10);
+                }
+            }
+            .board-write-wrap {
+                margin-bottom: rem(40);
+                dl {
+                    display : flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: rem(40) 0;
+                    font-size: rem(20);
+                    dt {
+                        width: 20%;
+                    }
+                    dd {
+                        width: 80%;
+                        input {
+                            width: 95%;
+                            background-color: #fff;
+                            color : #000;
+                            font-size: bold;
+                            height: rem(50);
+                            border-radius: rem(10);
+                            padding : rem(10);
+                        }
+                        .input-cont {
+                            width: 95%;
+                            background-color: #fff;
+                            color : #000;
+                            border-radius: rem(10);
+                            padding : rem(10);
+                            height: rem(200);
+                            font-size : rem(18);
+                        }
+                        .input-password {
+                            -webkit-text-security:disc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

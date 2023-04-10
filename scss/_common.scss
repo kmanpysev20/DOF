@@ -59,11 +59,6 @@ q:before, q:after {
   content: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -102,4 +97,45 @@ select {
 
 select::-ms-expand{
   display:none;/*for IE10,11*/
+}
+
+.btn {
+  cursor : pointer;
+  border : rem(2) solid #707070;
+  border-radius : rem(10);
+  background-color : #707070;
+  padding : rem(10);
+  font-size : rem(18);
+}
+
+
+tr {
+  display: inline-block;
+  width: 100%;
+}
+
+th {
+  padding : rem(15) rem(10);
+  height : rem(80);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-top : 2px solid #707070;
+  border-bottom : 2px solid #707070;
+}
+
+td {
+  padding : rem(15) rem(10);
+  height : rem(80);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom : 2px solid #707070;
+}
+
+@media (max-width: 1024px) { 
+  th,td {
+    height : rem(100);
+    font-size: rem(14);
+  }
 }

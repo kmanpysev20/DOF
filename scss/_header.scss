@@ -59,6 +59,8 @@
     .btn-gnb {
         display:none;
         cursor: pointer;
+        background-color: transparent;
+        border: none;
         .ic-gnb-open {
             width: rem(40);
             height: rem(40);
@@ -107,6 +109,8 @@
                 position: absolute;
                 top:rem(-64);
                 right:rem(80);
+                border : none;
+                background-color: transparent;
                 cursor: pointer;
                 width: rem(40);
                 height: rem(40);

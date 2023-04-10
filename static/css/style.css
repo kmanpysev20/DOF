@@ -118,6 +118,8 @@
 #header .btn-gnb {
   display: none;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 #header .btn-gnb .ic-gnb-open {
   width: 2.5rem;
@@ -167,6 +169,8 @@
     position: absolute;
     top: -4rem;
     right: 5rem;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
     width: 2.5rem;
     height: 2.5rem;
@@ -1615,6 +1619,188 @@
   border-radius: 1.875rem;
 }
 
+#sectionBorder {
+  padding: 2.5rem 2.5rem;
+  min-height: 0;
+}
+#sectionBorder .inner .contents .tit {
+  font-size: 2.375rem;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+}
+#sectionBorder .inner .contents .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+#sectionBorder .inner .contents table {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+#sectionBorder .inner .contents table tbody {
+  width: 100%;
+}
+#sectionBorder .inner .contents table tbody tr {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#sectionBorder .inner .contents table tbody tr.list {
+  cursor: pointer;
+}
+#sectionBorder .inner .contents table tbody tr.list:hover {
+  background-color: orange;
+}
+#sectionBorder .inner .contents table tbody tr th:nth-of-type(1) {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 10%;
+  border-right: 2px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr th:nth-of-type(2) {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 50%;
+  border-right: 2px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr th:nth-of-type(3) {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 20%;
+  border-right: 2px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr th:nth-of-type(4) {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 20%;
+}
+#sectionBorder .inner .contents table tbody tr td:nth-of-type(1) {
+  width: 10%;
+  border-right: 1px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr td:nth-of-type(2) {
+  width: 50%;
+  text-align: left;
+  border-right: 1px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr td:nth-of-type(3) {
+  width: 20%;
+  border-right: 1px solid #707070;
+}
+#sectionBorder .inner .contents table tbody tr td:nth-of-type(4) {
+  width: 20%;
+  word-break: break-all;
+}
+
+#sectionBorder-write {
+  padding: 2.5rem 2.5rem;
+  min-height: 0;
+}
+#sectionBorder-write .inner .contents .tit {
+  font-size: 2.375rem;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+  color: powderblue;
+}
+#sectionBorder-write .inner .contents .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+#sectionBorder-write .inner .contents .btn-wrap .regis {
+  margin-right: 0.625rem;
+}
+#sectionBorder-write .inner .contents .board-write-wrap {
+  margin-bottom: 2.5rem;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
+  font-size: 1.25rem;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl dt {
+  width: 20%;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl dd {
+  width: 80%;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl dd input {
+  width: 95%;
+  background-color: #fff;
+  color: #000;
+  font-size: bold;
+  height: 3.125rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl dd .input-cont {
+  width: 95%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  height: 12.5rem;
+  font-size: 1.125rem;
+}
+#sectionBorder-write .inner .contents .board-write-wrap dl dd .input-password {
+  -webkit-text-security: disc;
+}
+
+#sectionBorder-read {
+  padding: 2.5rem 2.5rem;
+  min-height: 0;
+}
+#sectionBorder-read .inner .contents .tit {
+  font-size: 2.375rem;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+  color: orange;
+}
+#sectionBorder-read .inner .contents .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+#sectionBorder-read .inner .contents .btn-wrap .regis {
+  margin-right: 0.625rem;
+}
+#sectionBorder-read .inner .contents .board-read-wrap {
+  margin-bottom: 2.5rem;
+}
+#sectionBorder-read .inner .contents .board-read-wrap dl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
+  font-size: 1.25rem;
+}
+#sectionBorder-read .inner .contents .board-read-wrap dl dt {
+  width: 20%;
+}
+#sectionBorder-read .inner .contents .board-read-wrap dl dd {
+  width: 80%;
+}
+#sectionBorder-read .inner .contents .board-read-wrap dl dd input {
+  width: 95%;
+  background-color: #fff;
+  color: #000;
+  font-size: bold;
+  height: 3.125rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+}
+#sectionBorder-read .inner .contents .board-read-wrap dl dd .input-cont {
+  width: 95%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  height: 12.5rem;
+  font-size: 1.125rem;
+}
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -1677,11 +1863,6 @@ q:before, q:after {
   content: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -1720,4 +1901,44 @@ select {
 
 select::-ms-expand {
   display: none; /*for IE10,11*/
+}
+
+.btn {
+  cursor: pointer;
+  border: 0.125rem solid #707070;
+  border-radius: 0.625rem;
+  background-color: #707070;
+  padding: 0.625rem;
+  font-size: 1.125rem;
+}
+
+tr {
+  display: inline-block;
+  width: 100%;
+}
+
+th {
+  padding: 0.9375rem 0.625rem;
+  height: 5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #707070;
+  border-bottom: 2px solid #707070;
+}
+
+td {
+  padding: 0.9375rem 0.625rem;
+  height: 5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #707070;
+}
+
+@media (max-width: 1024px) {
+  th, td {
+    height: 6.25rem;
+    font-size: 0.875rem;
+  }
 }
