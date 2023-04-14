@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_file
 
+from bson.objectid import ObjectId
+
 from pymongo import MongoClient
 
 client = MongoClient("mongodb+srv://kmanpysev20:test@cluster0.cknzfkt.mongodb.net/test")
@@ -11,11 +13,33 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+# 수정 코드
+# @app.route('/modify', methods=["POST"])
+# def modify_todo():
+#     id_receive = request.form["id_give"]
+#     id_receive = ObjectId(id_receive)
+
+#     title_receive = request.form["title_give"]
+#     writer_receive = request.form["writer_give"]
+#     content_receive = request.form["content_give"]
+#     password_receive = request.form["password_give"]
+
+#     db.Border.update_one({'_id' : id_receive}, {'$set': {'title': title_receive}})
+#     db.Border.update_one({'_id' : id_receive}, {'$set': {'writer': writer_receive}})
+#     db.Border.update_one({'_id' : id_receive}, {'$set': {'content': content_receive}})
+#     db.Border.update_one({'_id' : id_receive}, {'$set': {'password': password_receive}})
+
+#     return jsonify({"msg": "수정 완료!"})
+
+
 @app.route("/borderlist", methods=["GET"])
 def borderlist():
-    contents = list(db.Border.find({}, {'_id':False}))
+    contents = list(db.Border.find({}))
+    for content in contents:
+        content['_id'] = str(content['_id'])
     return jsonify({"result": contents})
 
+# 데이터 저장하기 코드
 @app.route('/post', methods=["POST"])
 def post_todo():
     title_receive = request.form["title_give"]
@@ -34,4 +58,5 @@ def post_todo():
     return jsonify({"msg": "등록 완료!"})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    # app.run(debug=True, port=5000)
+    app.run()

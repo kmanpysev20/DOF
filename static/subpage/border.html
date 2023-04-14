@@ -38,7 +38,7 @@
             <nav id="gnb">
                 <button type="button" class="btn btn-gnb-close"><i class="ic ic-gnb-close"></i></button>
                 <ul class="gnb-list">
-                    <li><a href="../index.html" class="txt">HOME</a></li>
+                    <li><a href="http://localhost:5000" class="txt">HOME</a></li>
                     <li><a href="../subpage/intro.html" class="txt">INTRO</a></li>
                     <li><a href="../subpage/member.html" class="txt">MEMBER</a></li>
                     <li><a href="../subpage/border.html" class="txt">BORDER</a></li>
@@ -67,6 +67,14 @@
                                 <td>2023<br>04/03</td>
                             </tr> -->
                         </table>
+                        <!-- 페이징 처리 -->
+                        <!-- <div class="pagenation">
+                            <a href="#"><<</a>
+                            <a href="#"><</a>
+                            <a href="#">1</a>
+                            <a href="#">></a>
+                            <a href="#">>></a>
+                        </div> -->
                         <div class="btn-wrap">
                             <button class="btn write"><a href="../subpage/border-write.html">글쓰기</a></button>
                         </div>
@@ -121,39 +129,71 @@
         function borderlist() {
             fetch("/borderlist").then(res => res.json()).then(data => {
                 let rows = data['result'];
-                // $('.list').empty();
-                rows.forEach((row) => {
+                rows.forEach((row, index) => {
+                    let idSum = index + 1;
+                    let id = row['_id'];
+                    let ymd = row['ymd'];
                     let title = row['title'];
                     let writer = row['writer'];
-                    let ymd = row['ymd'];
-
-                    let temp_html = `<tr class="list" onclick="listClick()">
-                                    <td>1</td>
-                                    <td>${title}</td>
-                                    <td>${writer}</td>
-                                    <td>${ymd}</td>
-                                    </tr>`
+                    let content = row['content'];
+                    console.log(idSum + " " + "index 입니다");
+                    let temp_html = `<tr id="${id}" class="list">
+                     <td>${idSum}</td>
+                     <td>${title}</td>
+                     <td>${writer}</td>
+                     <td>${ymd}</td>
+                     </tr>`
                     $('.table-wrap').append(temp_html);
                 })
             })
         }
+0
+        //클릭 이벤트
+        function listClick(row) {
+            $('.list').on('click', function() {
+                let id = row['_id'];
+                let ymd = row['ymd'];
+                let title = row['title'];
+                let writer = row['writer'];
+                let content = row['content'];
+
+                localStorage.setItem(
+                    "board_content",
+                    JSON.stringify({ id, ymd, title, writer, content })
+                );
+                console.log(id, ymd, title, writer, content);
+                $(location).attr("href", "../subpage/border-modify.html");
+            })
+        }
+        // $(function listClick(row) {
+        //     $('.list').on('click', function () {
+        //         let id = row['_id'];
+        //         let ymd = row['ymd'];
+        //         let title = row['title'];
+        //         let writer = row['writer'];
+        //         let content = row['content'];
+
+        //         localStorage.setItem(
+        //             "board_content",
+        //             JSON.stringify({ id, ymd, title, writer, content })
+        //         );
+        //         console.log(id, ymd, title, writer, content);
+        //         $(location).attr("href", "../subpage/border-modify.html");
+        //     })
+        // });
 
         // popup
-        function popupControl() {
-            $(".popup-open").on('click', function () {
-                const popId = $(this).data('popup');
-                $("#" + popId).css('display', 'flex').hide().fadeIn('fast');
-                console.log(popId);
-            });
-            $(".pop-close-btn").on('click', function () {
-                $(this).parents('.pop-wrap').fadeOut();
-            });
-        };
-        popupControl();
-
-        function listClick() {
-            $(location).attr("href", "../subpage/border-read.html")
-        }
+        // function popupControl() {
+        //     $(".popup-open").on('click', function () {
+        //         const popId = $(this).data('popup');
+        //         $("#" + popId).css('display', 'flex').hide().fadeIn('fast');
+        //         console.log(popId);
+        //     });
+        //     $(".pop-close-btn").on('click', function () {
+        //         $(this).parents('.pop-wrap').fadeOut();
+        //     });
+        // };
+        // popupControl();
     </script>
     <!-- script [e]-->
 

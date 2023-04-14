@@ -8,6 +8,15 @@
                 font-weight: bold;
                 margin-bottom: rem(50);
             }
+            .pagenation {
+                a {
+                    padding : rem(10);
+                    &:hover {
+                        font-weight: bold;
+                        color : orange;
+                    }
+                }
+            }
             .btn-wrap {
                 display:flex;
                 justify-content: flex-end;

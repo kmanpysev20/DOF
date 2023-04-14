@@ -463,7 +463,7 @@
             .ic-arrow {
                 width: rem(30);
                 height: rem(30);
-                transition: all .2s ease;
+                transition: all .5s ease;
                 cursor: pointer;
                 &.win {
                     background: url("../img/ic-arrow-blue.svg") no-repeat center / cover;
