@@ -1639,6 +1639,9 @@
   display: flex;
   justify-content: flex-end;
 }
+#sectionBorder .inner .contents .btn-wrap .write:hover {
+  opacity: 0.8;
+}
 #sectionBorder .inner .contents table {
   margin-bottom: 2.5rem;
   display: flex;
@@ -1696,7 +1699,7 @@
   width: 20%;
   border-right: 1px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr td:nth-of-type(4) {
+#sectionBorder .inner .contents table tbody tr td:nth-of-type(6) {
   width: 20%;
   word-break: break-all;
 }
@@ -1717,6 +1720,12 @@
 }
 #sectionBorder-write .inner .contents .btn-wrap .regis {
   margin-right: 0.625rem;
+}
+#sectionBorder-write .inner .contents .btn-wrap .regis:hover {
+  opacity: 0.8;
+}
+#sectionBorder-write .inner .contents .btn-wrap .cancle:hover {
+  opacity: 0.8;
 }
 #sectionBorder-write .inner .contents .board-write-wrap {
   margin-bottom: 2.5rem;
@@ -1752,9 +1761,6 @@
   height: 12.5rem;
   font-size: 1.125rem;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl dd .input-password {
-  -webkit-text-security: disc;
-}
 
 #sectionBorder-modify {
   padding: 2.5rem 2.5rem;
@@ -1770,8 +1776,20 @@
   display: flex;
   justify-content: flex-end;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .regis {
+#sectionBorder-modify .inner .contents .btn-wrap .modify {
   margin-right: 0.625rem;
+}
+#sectionBorder-modify .inner .contents .btn-wrap .modify:hover {
+  opacity: 0.8;
+}
+#sectionBorder-modify .inner .contents .btn-wrap .del {
+  margin-right: 0.625rem;
+}
+#sectionBorder-modify .inner .contents .btn-wrap .del:hover {
+  opacity: 0.8;
+}
+#sectionBorder-modify .inner .contents .btn-wrap .cancle:hover {
+  opacity: 0.8;
 }
 #sectionBorder-modify .inner .contents .board-read-wrap {
   margin-bottom: 2.5rem;
@@ -1798,6 +1816,10 @@
   border-radius: 0.625rem;
   padding: 0.625rem;
 }
+#sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-name {
+  background-color: #fff;
+  opacity: 0.6;
+}
 #sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-cont {
   width: 95%;
   background-color: #fff;
@@ -1806,6 +1828,10 @@
   padding: 0.625rem;
   height: 12.5rem;
   font-size: 1.125rem;
+}
+#sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-password {
+  background-color: #fff;
+  opacity: 0.6;
 }
 
 html, body, div, span, object, iframe,
@@ -1941,6 +1967,48 @@ td {
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid #707070;
+}
+
+.input-password {
+  -webkit-text-security: disc;
+}
+.input-password.is-click {
+  -webkit-text-security: none;
+}
+
+.pw-check {
+  position: relative;
+  font-size: 1rem;
+  background-color: #707070;
+  padding: 0.125rem 0.5rem;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+.pw-check:hover:before {
+  content: "비밀번호 표시";
+  position: absolute;
+  width: 6.875rem;
+  color: #fff;
+  background-color: #707070;
+  top: -174%;
+  left: -203%;
+  border: 0.0625rem solid #707070;
+  border-radius: 0.625rem;
+  padding: 0.375rem;
+  z-index: 3;
+}
+.pw-check:hover:after {
+  border-top: 0.625rem solid #707070;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid transparent;
+  border-bottom: 0rem solid transparent;
+  content: "";
+  position: absolute;
+  top: -58%;
+  left: 5%;
+}
+.pw-check.is-click {
+  background-color: #707070;
 }
 
 @media (max-width: 1024px) {

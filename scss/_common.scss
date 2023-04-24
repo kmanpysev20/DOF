@@ -133,6 +133,54 @@ td {
   border-bottom : 2px solid #707070;
 }
 
+// .tooltip > .tooltip-inner {
+//   background-color: orange; 
+// }
+
+.input-password {
+  -webkit-text-security:disc;
+  &.is-click {
+      -webkit-text-security:none;
+  }
+}
+
+.pw-check {
+  position: relative;
+  font-size: rem(16);
+  background-color: #707070;
+  padding : rem(2) rem(8);
+  border-radius: rem(20);
+  cursor: pointer;
+  &:hover {
+    &:before {
+      content: "비밀번호 표시";
+      position: absolute;
+      width: rem(110);
+      color : #fff;
+      background-color: #707070;
+      top : -174%;
+      left : -203%;
+      border: rem(1) solid #707070;
+      border-radius: rem(10);
+      padding : rem(6);
+      z-index: 3;
+    }
+    &:after {
+      border-top: rem(10) solid #707070;
+      border-left: rem(10) solid transparent;
+      border-right: rem(10) solid transparent;
+      border-bottom: rem(0) solid transparent;
+      content: "";
+      position: absolute;
+      top: -58%;
+      left: 5%;
+    }
+  }
+  &.is-click {
+    background-color: #707070;
+  }
+}
+
 @media (max-width: 1024px) { 
   th,td {
     height : rem(100);

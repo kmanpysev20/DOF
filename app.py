@@ -13,25 +13,20 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-# 수정 코드
-# @app.route('/modify', methods=["POST"])
-# def modify_todo():
-#     id_receive = request.form["id_give"]
-#     id_receive = ObjectId(id_receive)
+# 수정하는 코드
+@app.route('/modify', methods=["POST"])
+def modify():
+    id_receive = request.form["id_give"]
+    id_receive = ObjectId(id_receive)
 
-#     title_receive = request.form["title_give"]
-#     writer_receive = request.form["writer_give"]
-#     content_receive = request.form["content_give"]
-#     password_receive = request.form["password_give"]
+    title_receive = request.form["title_give"]
+    content_receive = request.form["content_give"]
+    db.Border.update_one({'_id' : id_receive}, {'$set':{title_receive}})
+    db.Border.update_one({'_id' : id_receive}, {'$set':{content_receive}})
 
-#     db.Border.update_one({'_id' : id_receive}, {'$set': {'title': title_receive}})
-#     db.Border.update_one({'_id' : id_receive}, {'$set': {'writer': writer_receive}})
-#     db.Border.update_one({'_id' : id_receive}, {'$set': {'content': content_receive}})
-#     db.Border.update_one({'_id' : id_receive}, {'$set': {'password': password_receive}})
+    return jsonify({"msg": "수정 완료!"})
 
-#     return jsonify({"msg": "수정 완료!"})
-
-
+# 각 리스트 ID 값 저장하는 코드
 @app.route("/borderlist", methods=["GET"])
 def borderlist():
     contents = list(db.Border.find({}))
@@ -41,7 +36,7 @@ def borderlist():
 
 # 데이터 저장하기 코드
 @app.route('/post', methods=["POST"])
-def post_todo():
+def post():
     title_receive = request.form["title_give"]
     writer_receive = request.form["writer_give"]
     content_receive = request.form["content_give"]

@@ -69,11 +69,14 @@
                             </dl>
                             <dl>
                                 <dt>비밀번호</dt>
-                                <dd><input class="input-password" type="text" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="비밀번호 입력"></dd>
+                                <button class="pw-check">?</button>
+                                <dd><input class="input-password" type="text" maxlength="4"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                        placeholder="비밀번호 입력"></dd>
                             </dl>
                         </div>
                         <div class="btn-wrap">
-                            <button onclick="onClickRegisCallFunc();" class="btn regis">등록</button>
+                            <button onclick="regisClick();" class="btn regis">등록</button>
                             <button onclick="cancle()" class="btn cancle">취소</button>
                         </div>
                     </div>
@@ -100,7 +103,7 @@
     <!-- wrap [e] -->
 
     <!-- info popup[s] -->
-    <div class="modal-container">
+    <!-- <div class="modal-container">
         <div class="pop-wrap" id="info-pop">
             <div class="infopop">
                 <div class="pop-cont">
@@ -111,7 +114,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- info popup[e] -->
 
 
@@ -119,31 +122,11 @@
     <script src="../js/swiper.min.js"></script>
     <script src="../js/common.js"></script>
     <script>
-        // popup
-        function popupControl() {
-            $(".popup-open").on('click', function () {
-                const popId = $(this).data('popup');
-                $("#" + popId).css('display', 'flex').hide().fadeIn('fast');
-                console.log(popId);
-            });
-            $(".pop-close-btn").on('click', function () {
-                $(this).parents('.pop-wrap').fadeOut();
-            });
-        };
-        popupControl();
-
         //등록 클릭했을 때 이벤트
-        function onClickRegisCallFunc() {
+        function regisClick() {
             if (isRegist() === true) {
                 // 등록 처리 함수 실행
                 writeBorder();
-            }
-        }
-
-        function cancle() {
-            if (confirm("정말 취소할까요?")) {
-                $(location).attr("href", "../subpage/border.html")
-            } else {
             }
         }
 
