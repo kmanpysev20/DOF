@@ -29,8 +29,8 @@ def modify():
 
     title_receive = request.form["title_give"]
     content_receive = request.form["content_give"]
-    db.Border.update_one({'_id' : id_receive}, {'$set':{title_receive}})
-    db.Border.update_one({'_id' : id_receive}, {'$set':{content_receive}})
+    db.Border.update_one({'_id' : id_receive}, {'$set':{'title' : title_receive}})
+    db.Border.update_one({'_id' : id_receive}, {'$set':{'content' : content_receive}})
     return jsonify({"msg": "수정 완료!"})
 
 

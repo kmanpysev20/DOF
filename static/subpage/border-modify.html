@@ -70,14 +70,15 @@
                                 <dt>비밀번호</dt>
                                 <button class="pw-check">?</button>
                                 <dd><input class="input-password" disabled type="text" maxlength="4"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    placeholder="비밀번호 입력">
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                        placeholder="비밀번호 입력">
                                 </dd>
                             </dl>
 
                         </div>
                         <div class="btn-wrap">
-                            <button onclick="modifyClick($('.board-read-wrap').attr('id'))" class="btn modify">수정</button>
+                            <button onclick="modifyClick($('.board-read-wrap').attr('id'))"
+                                class="btn modify">수정</button>
                             <button onclick="deleteBorder()" class="btn del">삭제</button>
                             <button onclick="cancle()" class="btn cancle">취소</button>
                         </div>
@@ -124,18 +125,21 @@
     <script src="../js/swiper.min.js"></script>
     <script src="../js/common.js"></script>
     <script>
+        let id = -1;
         $(document).ready(() => {
-            modifylist();
-        })
+            id = modifylist();
+        });
 
-        //수정 클릭했을 때 이벤트
-        function modifyClick(_id) {
-            if (isRegist() === true) {
-                // 등록 처리 함수 실행
-                modifyBorder(_id);
-            }
+      //수정 클릭했을 때 이벤트
+      function modifyClick() {
+        if (isRegist() === true) {
+          // 등록 처리 함수 실행
+          if (id != -1) {
+            console.log("id : " + id);
+            modifyBorder(id);
+          }
         }
-
+    }
     </script>
     <!-- script [e]-->
 

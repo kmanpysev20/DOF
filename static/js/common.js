@@ -96,48 +96,49 @@ function writeBorder() {
     })
 }
 
-//modify 데이터 받기
 function modifylist() {
     const queryString = window.location.search;
     const searchParams = new URLSearchParams(decodeURIComponent(queryString));
-    console.log(searchParams)
-    let _id = searchParams.get('_id');
-    let title = searchParams.get('title');
-    let writer = searchParams.get('writer');
-    let content = searchParams.get('content');
-    let password = searchParams.get('password');
-    console.log("_id : " + _id)
-    console.log("타이틀: " + title)
-    console.log("작성자 : " + writer)
-    console.log("내용 : " + content)
-    console.log("비밀번호 : " + password)
-    $('.board-read-wrap').attr('id', _id);
-    $('.input-tit').val(title);
-    $('.input-name').val(writer);
-    $('.input-cont').val(content);
-    $('.input-password').val(password);
-}
+    console.log(searchParams);
+    let _id = searchParams.get("_id");
+    let title = searchParams.get("title");
+    let writer = searchParams.get("writer");
+    let content = searchParams.get("content");
+    let password = searchParams.get("password");
+    console.log("_id : " + _id);
+    console.log("타이틀: " + title);
+    console.log("작성자 : " + writer);
+    console.log("내용 : " + content);
+    console.log("비밀번호 : " + password);
+    $(".board-read-wrap").attr("id", _id);
+    $(".input-tit").val(title).attr("id", _id);
+    $(".input-name").val(writer).attr("id", _id);
+    $(".input-cont").val(content).attr("id", _id);
+    $(".input-password").val(password).attr("id", _id);
+  
+    return _id;
+  }
 
-//글수정 저장
 function modifyBorder(_id) {
-    let title = $('.input-tit').val();
-    let content = $('.input-cont').val();
-
-    let formData = new FormData()
-    formData.append("id_give", _id)
-    formData.append("title_give", title)
-    formData.append("content_give", content) 
-
-    console.log(title)
-    console.log(content)
-
-    fetch('/modify', { method: "POST", body: formData }).then(res => res.json()).then(data => {
-        alert(data["msg"])
-        $(location).attr("href", "../subpage/border.html")
-        // window.location.reload()
-    })
-}
-
+    let title = $(".input-tit").val();
+    let content = $(".input-cont").val();
+  
+    console.log("_id : " + _id);
+    console.log("타이틀: " + title);
+    console.log("작성자 : " + content);
+  
+    let formData = new FormData();
+    formData.append("id_give", _id);
+    formData.append("title_give", title);
+    formData.append("content_give", content);
+  
+    fetch("/modify", { method: "POST", body: formData })
+      .then((res) => res.json())
+      .then((data) => {
+        alert(data["msg"]);
+        $(location).attr("href", "../subpage/border.html");
+      });
+  }
 //글수정 삭제
 function deleteBorder(_id) {
     let formData = new FormData()
