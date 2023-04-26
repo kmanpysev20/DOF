@@ -112,27 +112,44 @@ function modifylist() {
     console.log("내용 : " + content)
     console.log("비밀번호 : " + password)
     $('.board-read-wrap').attr('id', _id);
-    $('.input-tit').val(title).attr('id', _id);
-    $('.input-name').val(writer).attr('id', _id);
-    $('.input-cont').val(content).attr('id', _id);
-    $('.input-password').val(password).attr('id', _id);
+    $('.input-tit').val(title);
+    $('.input-name').val(writer);
+    $('.input-cont').val(content);
+    $('.input-password').val(password);
 }
 
 //글수정 저장
 function modifyBorder(_id) {
-    let title = $(`#${_id} > .input-tit`).val();
-    let content = $(`#${_id} > .input-cont`).val();
+    let title = $('.input-tit').val();
+    let content = $('.input-cont').val();
 
     let formData = new FormData()
     formData.append("id_give", _id)
     formData.append("title_give", title)
-    formData.append("content_give", content)
+    formData.append("content_give", content) 
+
+    console.log(title)
+    console.log(content)
 
     fetch('/modify', { method: "POST", body: formData }).then(res => res.json()).then(data => {
         alert(data["msg"])
         $(location).attr("href", "../subpage/border.html")
+        // window.location.reload()
     })
 }
+
+//글수정 삭제
+function deleteBorder(_id) {
+    let formData = new FormData()
+    formData.append("id_give", _id)
+
+    fetch('/delete', { method: "POST", body: formData }).then(res => res.json()).then(data => {
+        alert(data["msg"])
+        $(location).attr("href", "../subpage/border.html")
+        // window.location.reload()
+    })
+}
+
 
 //취소
 function cancle() {

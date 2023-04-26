@@ -13,6 +13,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+# 삭제하는 코드
+@app.route('/delete', methods=["POST"])
+def delete():   
+    id_receive = request.form["id_give"]
+    id_receive = ObjectId(id_receive)
+    db.Border.delete_one({'_id':id_receive})
+    return jsonify({"msg": "삭제 완료!"})
+    
 # 수정하는 코드
 @app.route('/modify', methods=["POST"])
 def modify():
@@ -23,8 +31,8 @@ def modify():
     content_receive = request.form["content_give"]
     db.Border.update_one({'_id' : id_receive}, {'$set':{title_receive}})
     db.Border.update_one({'_id' : id_receive}, {'$set':{content_receive}})
-
     return jsonify({"msg": "수정 완료!"})
+
 
 # 각 리스트 ID 값 저장하는 코드
 @app.route("/borderlist", methods=["GET"])

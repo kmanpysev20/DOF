@@ -71,13 +71,14 @@
                                 <button class="pw-check">?</button>
                                 <dd><input class="input-password" disabled type="text" maxlength="4"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    placeholder="비밀번호 입력"></dd>
+                                    placeholder="비밀번호 입력">
+                                </dd>
                             </dl>
 
                         </div>
                         <div class="btn-wrap">
-                            <button onclick="modifyClick(_id)" class="btn modify">수정</button>
-                            <button onclick="" class="btn del">삭제</button>
+                            <button onclick="modifyClick($('.board-read-wrap').attr('id'))" class="btn modify">수정</button>
+                            <button onclick="deleteBorder()" class="btn del">삭제</button>
                             <button onclick="cancle()" class="btn cancle">취소</button>
                         </div>
                     </div>
