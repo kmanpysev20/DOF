@@ -1,3 +1,4 @@
+import math
 from flask import Flask, render_template, request, jsonify, send_file
 
 from bson.objectid import ObjectId
@@ -35,12 +36,32 @@ def modify():
 
 
 # 각 리스트 ID 값 저장하는 코드
-@app.route("/borderlist", methods=["GET"])
-def borderlist():
-    contents = list(db.Border.find({}))
+# @app.route("/borderlist", methods=["GET"])
+# def borderlist():
+#     contents = list(db.Border.find({}))
+#     for content in contents:
+#         content['_id'] = str(content['_id'])
+#     return jsonify({"result": contents})
+
+@app.route("/boardlist", methods=['GET'])
+def boardlist():
+    page = request.args.get('page', 1, type=int)
+    limit = 5
+    contents = db.Border.find({}).skip((page - 1)*limit).limit(limit)
+	
+    tot_count = db.Border.find({}).count()
+    last_page_num = math.ceil(tot_count / limit)
+    
+    lists = []
     for content in contents:
         content['_id'] = str(content['_id'])
-    return jsonify({"result": contents})
+        lists.append(content)
+
+    return jsonify({'list': lists,
+                    'limit': limit,
+                    'page': page,
+                    'result': contents,
+                    'last_page_num': last_page_num})
 
 # 데이터 저장하기 코드
 @app.route('/post', methods=["POST"])

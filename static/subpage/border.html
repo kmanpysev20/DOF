@@ -103,12 +103,16 @@
 
     <!-- info popup[s] -->
     <div class="modal-container">
-        <div class="pop-wrap" id="info-pop">
+        <div class="is-popup" id="info-pop">
             <div class="infopop">
                 <div class="pop-cont">
                     <div class="pop-head">
-                        <p class="pop-txt">오픈 예정</p>
-                        <button class="pop-close-btn">확인</button>
+                        <p class="pop-txt">비밀번호를 입력하세요</p>
+                        <div class="input-wrap"><input class="input-password" type="text" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"placeholder="숫자만 입력가능"></div>
+                        <div class="btn-wrap">
+                            <button class="pop-btn accept">확인</button>
+                            <button class="pop-btn popupCancle" onclick="popupCancle()">취소</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,7 +131,7 @@
         })
     </script>
     <!-- script [e]-->
-
+    
 </body>
 
 </html>

@@ -1567,8 +1567,8 @@
 .modal-container {
   width: 100%;
 }
-.modal-container .pop-wrap {
-  background-color: rgba(0, 0, 0, 0.75);
+.modal-container .is-popup {
+  background-color: rgba(255, 255, 255, 0.75);
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -1578,6 +1578,9 @@
   bottom: 0;
   display: none;
   z-index: 2000;
+}
+.modal-container .is-popup.is-open {
+  display: flex;
 }
 
 .infopop {
@@ -1606,17 +1609,30 @@
   font-size: 1.75rem;
   font-weight: bold;
   color: #000;
-  margin-bottom: 3.125rem;
+  margin-bottom: 1.5625rem;
 }
-.infopop .pop-cont .pop-head .pop-close-btn {
+.infopop .pop-cont .pop-head .input-wrap {
+  margin-bottom: 1.5625rem;
+}
+.infopop .pop-cont .pop-head .input-wrap .input-password {
+  text-align: center;
+  border-bottom: 0.0625rem solid #000;
+  color: #000;
+}
+.infopop .pop-cont .pop-head .btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.infopop .pop-cont .pop-head .btn-wrap .pop-btn {
   font-size: 1.375rem;
   font-weight: bold;
   border: 0.0625rem solid #000;
   cursor: pointer;
-  padding: 1.25rem 1.875rem;
+  padding: 0.625rem 1.875rem;
   color: #fff;
   background: #000;
   border-radius: 1.875rem;
+  margin: 0rem 0.625rem;
 }
 
 #sectionBorder {
@@ -1712,7 +1728,7 @@
   font-size: 2.375rem;
   font-weight: bold;
   margin-bottom: 3.125rem;
-  color: powderblue;
+  color: rgb(56, 202, 222);
 }
 #sectionBorder-write .inner .contents .btn-wrap {
   display: flex;

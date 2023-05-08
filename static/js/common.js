@@ -46,7 +46,6 @@ function borderlist() {
                             </tr>`
             $('.table-wrap').append(temp_html);
         })
-
         $('.table-wrap').on('click', '.list', function () {
             const row = $(this).find('td');
             listClick(row)
@@ -62,8 +61,14 @@ function listClick(row) {
     let content = row.eq(3).text()
     let password = row.eq(4).text()
     let _id = row.eq(6).text()
+    console.log(password)
 
-    $(location).attr("href",
+    let promPasss = prompt('비밀번호룰 입력하세요', '숫자만 입력');
+    let passNum = Number(promPasss);
+    console.log(passNum);
+
+    if(passNum === password) {
+        $(location).attr("href",
         `../subpage/border-modify.html?
     ymd=${encodeURIComponent(ymd)}
     &title=${encodeURIComponent(title)}
@@ -71,8 +76,10 @@ function listClick(row) {
     &content=${encodeURIComponent(content)}
     &password=${encodeURIComponent(password)}
     &_id=${encodeURIComponent(_id)}`)
+    } else {
+        alert("실행불가")
+    }
 }
-
 
 //글등록 데이터 저장
 function writeBorder() {
@@ -144,8 +151,10 @@ function deleteBorder(_id) {
     let formData = new FormData()
     formData.append("id_give", _id)
 
-    fetch('/delete', { method: "POST", body: formData }).then(res => res.json()).then(data => {
-        alert(data["msg"])
+    fetch('/delete', { method: "POST", body: formData })
+    .then((res) => res.json())
+    .then((data) => {
+        alert(data["msg"]);
         $(location).attr("href", "../subpage/border.html")
         // window.location.reload()
     })
@@ -212,6 +221,13 @@ function cancle() {
         $(location).attr("href", "../subpage/border.html")
     } else {
     }
+}
+
+//popupCancle
+function popupCancle() {
+    $('.popupCancle').on('click', function () {
+        $('.is-popup').removeClass('is-open');
+    });
 }
 
 // popup
