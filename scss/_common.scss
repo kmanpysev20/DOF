@@ -106,6 +106,7 @@ select::-ms-expand{
   background-color : #707070;
   padding : rem(10);
   font-size : rem(18);
+  text-align: center;
 }
 
 
@@ -148,7 +149,7 @@ td {
   position: relative;
   font-size: rem(16);
   background-color: #707070;
-  padding : rem(2) rem(8);
+  padding : rem(4) rem(8);
   border-radius: rem(20);
   cursor: pointer;
   &:hover {

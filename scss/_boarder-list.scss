@@ -1,4 +1,4 @@
-#sectionBorder {
+#sectionBoarder-list {
     padding: rem(40) rem(40);
     min-height: 0;
     .inner {
@@ -7,31 +7,36 @@
                 font-size: rem(38);
                 font-weight: bold;
                 margin-bottom: rem(50);
-
-
             }
-            .pagenation {
-                a {
-                    padding : rem(10);
+            .non-data {
+                margin-bottom: rem(20);
+            }
+            .pg {
+                margin-bottom: rem(20);
+                .pg-btn {
+                    padding : rem(0) rem(10);
+                    font-weight: 300;
                     &:hover {
-                        font-weight: bold;
-                        color : orange;
+                        color : #707070;
                     }
                 }
-            }
-            .btn-wrap {
-                display:flex;
-                justify-content: flex-end;
-                .write {
+                .current_page {
+                    font-weight: bold;
+                    color : aquamarine;
                     &:hover {
-                        opacity: 0.8;
+                        color : aquamarine;
                     }
+                }
+                .empty_page {
+                    display : none;
                 }
             }
             table {
                 margin-bottom : rem(40);
                 display : flex;
                 justify-content: center;
+                height: rem(600);
+                overflow: auto;
                 tbody {
                     width: 100%;
                     tr {
@@ -40,12 +45,6 @@
                         justify-content: center;
                         align-items: center;
                         width: 100%;
-                        &.list {
-                            cursor: pointer;
-                            &:hover {
-                                background-color: orange;
-                            }
-                        }
                         th {
                             &:nth-of-type(1) {
                                 font-size: rem(16);
@@ -73,26 +72,44 @@
                         }
                         td {
                             &:nth-of-type(1) {
-                                width: 10%;
+                                width: 9.9%;
                                 border-right : 1px solid #707070;
-
                             }
                             &:nth-of-type(2) {
                                 width: 50%;
                                 text-align: left;
                                 border-right : 1px solid #707070;
-
+                                font-size: rem(16);
+                                text-decoration: underline;
+                                text-underline-position : under;
+                                color : aquamarine;
+                                &:hover {
+                                    color : aqua;
+                                    font-weight: bold;
+                                }
                             }
                             &:nth-of-type(3) {
                                 width: 20%;
                                 border-right : 1px solid #707070;
                             }
-                            &:nth-of-type(6) {
+                            &:nth-of-type(4) {
                                 width: 20%;
                                 word-break: break-all;
                             }
+                            &:nth-of-type(5) {
+                                display : none;
+                            }
                         }
                     }
+                }
+            }
+        }
+        .btn-wrap {
+            display:flex;
+            justify-content: flex-end;
+            .write {
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }

@@ -7,10 +7,10 @@
     <meta name="format-detection" content="telephone=no">
     <title>DOF - Doo One Friends</title>
 
-    <link rel="stylesheet" href="../css/swiper.min.css">
-    <link rel="stylesheet" href="../css/jquery-ui.min.css">
-    <link rel="stylesheet" href="../css/jquery-ui.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}">
 </head>
 <body>
 
@@ -23,9 +23,9 @@
             <h1 class="logo"><a href="http://localhost:5000"></a></h1>
             <ul class="menu-list">
                 <li class="menu-btn"><a href="http://localhost:5000">HOME</a></li>
-                <li class="menu-btn"><a href="../subpage/intro.html">INTRO</a></li>
-                <li class="menu-btn"><a href="../subpage/member.html">MEMBER</a></li>
-                <li class="menu-btn"><a href="../subpage/border.html">BORDER</a></li>
+                <li class="menu-btn"><a href="{{url_for('intro')}}">INTRO</a></li>
+                <li class="menu-btn"><a href="{{url_for('member')}}">MEMBER</a></li>
+                <li class="menu-btn"><a href="{{url_for('boarder_list')}}">BORDER</a></li>
             </ul>
             <button type="button" class="btn btn-gnb"><i class="ic ic-gnb-open"></i></button>
         </div>
@@ -33,9 +33,9 @@
             <button type="button" class="btn btn-gnb-close"><i class="ic ic-gnb-close"></i></button>
             <ul class="gnb-list">
                 <li><a href="http://localhost:5000" class="txt">HOME</a></li>
-                <li><a href="../subpage/intro.html" class="txt">INTRO</a></li>
-                <li><a href="../subpage/member.html" class="txt">MEMBER</a></li>
-                <li><a href="../subpage/border.html" class="txt">BORDER</a></li>
+                <li><a href="{{url_for('intro')}}" class="txt">INTRO</a></li>
+                <li><a href="{{url_for('member')}}" class="txt">MEMBER</a></li>
+                <li><a href="{{url_for('boarder_list')}}" class="txt">BORDER</a></li>
             </ul>
         </nav>
     </header>
@@ -49,9 +49,9 @@
                     <h2 class="tit">DOF INTRO</h2>
                     <div class="cont-wrap">
                         <div class="left">
-                            <video src="../video/video-do1.mp4" autoplay loop muted controls preload="true" class="animated-text"></video>
+                            <video src="{{ url_for('static', filename='../static/video/lol.mp4') }}" autoplay loop muted controls preload="true" class="animated-text"></video>
                             <span>X</span>
-                            <video src="../video/lol.mp4" autoplay loop muted controls preload="true" class="animated-text"></video>
+                            <video src="{{ url_for('static', filename='../static/video/video-do1.mp4') }}" autoplay loop muted controls preload="true" class="animated-text"></video>
                         </div>
                         <div class="right">
                             <p class="txt animated-text">
@@ -77,7 +77,7 @@
             </p>
             <p class="copy-txt">
                 <span class="txt">COPYRIGHT © DOF(Doo One Friends).ALL RIGHTS RESERVED.</span>
-                <a href="../subpage/service.html" class="txt-link">이용약관</a>
+                <a href="{{url_for('service')}}" class="txt-link">이용약관</a>
             </p>
         </div>
     </footer>
@@ -86,43 +86,14 @@
 </div>
 <!-- wrap [e] -->
 
-<!-- info popup[s] -->
-<div class="modal-container">
-    <div class="pop-wrap" id="info-pop">
-        <div class="infopop">
-            <div class="pop-cont">
-                <div class="pop-head">
-                    <p class="pop-txt">오픈 예정</p>
-                    <button class="pop-close-btn">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- info popup[e] -->
-
-
 <!-- script [s]-->
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-<script src="../js/jquery-ui.min.js"></script>
-
-<script src="../js/common.js"></script>
-<script src="../js/animate.js"></script>
-<script>
-// popup
-function popupControl() {
-    $(".popup-open").on('click', function () {
-        const popId = $(this).data('popup');
-        $("#"+popId).css('display', 'flex').hide().fadeIn('fast');
-        console.log(popId);
-    });
-    $(".pop-close-btn").on('click', function () {
-        $(this).parents('.pop-wrap').fadeOut();
-    });
-};
-popupControl();
-</script>
+<script type="text/javascript" src="{{ url_for('static', filename='../static/js/jquery-3.6.1.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='../static/js/jquery-ui.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='../static/js/swiper.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='../static/js/common.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='../static/js/animate.js')}}"></script>
 <!-- script [e]-->
 
 </body>

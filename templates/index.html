@@ -23,9 +23,9 @@
             <h1 class="logo"><a href="http://localhost:5000"></a></h1>
             <ul class="menu-list">
                 <li class="menu-btn"><a href="http://localhost:5000">HOME</a></li>
-                <li class="menu-btn"><a href="../static/subpage/intro.html">INTRO</a></li>
-                <li class="menu-btn"><a href="../static/subpage/member.html">MEMBER</a></li>
-                <li class="menu-btn"><a href="../static/subpage/border.html">BORDER</a></li>
+                <li class="menu-btn"><a href="{{url_for('intro')}}">INTRO</a></li>
+                <li class="menu-btn"><a href="{{url_for('member')}}">MEMBER</a></li>
+                <li class="menu-btn"><a href="{{url_for('boarder_list')}}">BORDER</a></li>
                 <!-- <li class="menu-btn popup-open" data-popup="info-pop"><a href="#.">BORDER</a></li> -->
             </ul>
             <button type="button" class="btn btn-gnb"><i class="ic ic-gnb-open"></i></button>
@@ -34,9 +34,9 @@
             <button type="button" class="btn btn-gnb-close"><i class="ic ic-gnb-close"></i></button>
             <ul class="gnb-list">
                 <li><a href="#" class="txt">HOME</a></li>
-                <li><a href="../static/subpage/intro.html" class="txt">INTRO</a></li>
-                <li><a href="../static/subpage/member.html" class="txt">MEMBER</a></li>
-                <li><a href="../static/subpage/border.html" class="txt">BORDER</a></li>
+                <li><a href="{{url_for('intro')}}" class="txt">INTRO</a></li>
+                <li><a href="{{url_for('member')}}" class="txt">MEMBER</a></li>
+                <li><a href="{{url_for('boarder_list')}}" class="txt">BORDER</a></li>
                 <!-- <li><a href="#." class="txt popup-open" data-popup="info-pop">BORDER</a></li> -->
             </ul>
         </nav>
@@ -48,7 +48,7 @@
         <section class = "main-section" id="sectionMain">
             <div class="inner">
                 <div class="contents">
-                    <h2 class="tit"><img src="../static/img/main-logo.png" alt="DOF 로고"></h2>
+                    <h2 class="tit"><img src="{{ url_for('static', filename='../static/img/main-logo.png')}}" alt="DOF 로고"></h2>
                     <div class="btn-wrap"><button class="record-btn">전적 갱신</button></div>
                     <div class="search">
                         <div class="search-wrap">
@@ -83,16 +83,16 @@
                     <div class="swiper-container main-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="../static/video/킴칲모데카이저헌정영상.mp4" muted controls preload="true"></video><span class="tit">1. 킴칲의 모데까이져 헌정 영상</span></p>
+                                <p class="thumb"><video src="{{ url_for('static', filename='../static/video/킴칲모데카이저헌정영상.mp4') }}" muted controls preload="true"></video><span class="tit">1. 킴칲의 모데까이져 헌정 영상</span></p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="../static/video/츄런들헌정영상(feat.seju.bel).mp4" muted controls preload="true"></video><span class="tit">2. 츄런들 헌정 영상 1탄</span></p>
+                                <p class="thumb"><video src="{{ url_for('static', filename='../static/video/츄런들헌정영상(feat.seju).mp4') }}" muted controls preload="true"></video><span class="tit">2. 츄런들 헌정 영상 1탄</span></p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="../static/video/츄런들헌정영상(feat.seju).mp4" muted controls preload="true"></video><span class="tit">3. 츄런들 헌정 영상 2탄</span></p>
+                                <p class="thumb"><video src="{{ url_for('static', filename='../static/video/츄런들헌정영상(feat.seju.bel).mp4') }}" muted controls preload="true"></video><span class="tit">3. 츄런들 헌정 영상 2탄</span></p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="thumb"><video src="../static/video/에코드리블.mp4" muted controls preload="true"></video><span class="tit">4. (1-5)에코 드리블 영상</span></p>
+                                <p class="thumb"><video src="{{ url_for('static', filename='../static/video/에코드리블.mp4') }}" muted controls preload="true"></video><span class="tit">4. (1-5)에코 드리블 영상</span></p>
                             </div>
                         </div>
                         <button type="button" class="swiper-button-prev"><i class="ic nav-prev-white"></i></button>
@@ -1348,7 +1348,7 @@
             </p>
             <p class="copy-txt">
                 <span class="txt">COPYRIGHT © DOF(Doo One Friends).ALL RIGHTS RESERVED.</span>
-                <a href="../static/subpage/service.html" class="txt-link">이용약관</a>
+                <a href="{{url_for('service')}}" class="txt-link">이용약관</a>
             </p>
         </div>
     </footer>
@@ -1358,7 +1358,7 @@
 <!-- wrap [e] -->
 
 <!-- info popup[s] -->
-<div class="modal-container">
+<!-- <div class="modal-container">
     <div class="pop-wrap" id="info-pop">
         <div class="infopop">
             <div class="pop-cont">
@@ -1369,7 +1369,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- info popup[e] -->
 
 <!-- script [s]-->

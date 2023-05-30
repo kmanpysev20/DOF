@@ -1635,131 +1635,155 @@
   margin: 0rem 0.625rem;
 }
 
-#sectionBorder {
+#sectionBoarder-list {
   padding: 2.5rem 2.5rem;
   min-height: 0;
 }
-#sectionBorder .inner .contents .tit {
+#sectionBoarder-list .inner .contents .tit {
   font-size: 2.375rem;
   font-weight: bold;
   margin-bottom: 3.125rem;
 }
-#sectionBorder .inner .contents .pagenation a {
-  padding: 0.625rem;
+#sectionBoarder-list .inner .contents .non-data {
+  margin-bottom: 1.25rem;
 }
-#sectionBorder .inner .contents .pagenation a:hover {
+#sectionBoarder-list .inner .contents .pg {
+  margin-bottom: 1.25rem;
+}
+#sectionBoarder-list .inner .contents .pg .pg-btn {
+  padding: 0rem 0.625rem;
+  font-weight: 300;
+}
+#sectionBoarder-list .inner .contents .pg .pg-btn:hover {
+  color: #707070;
+}
+#sectionBoarder-list .inner .contents .pg .current_page {
   font-weight: bold;
-  color: orange;
+  color: aquamarine;
 }
-#sectionBorder .inner .contents .btn-wrap {
-  display: flex;
-  justify-content: flex-end;
+#sectionBoarder-list .inner .contents .pg .current_page:hover {
+  color: aquamarine;
 }
-#sectionBorder .inner .contents .btn-wrap .write:hover {
-  opacity: 0.8;
+#sectionBoarder-list .inner .contents .pg .empty_page {
+  display: none;
 }
-#sectionBorder .inner .contents table {
+#sectionBoarder-list .inner .contents table {
   margin-bottom: 2.5rem;
   display: flex;
   justify-content: center;
+  height: 37.5rem;
+  overflow: auto;
 }
-#sectionBorder .inner .contents table tbody {
+#sectionBoarder-list .inner .contents table tbody {
   width: 100%;
 }
-#sectionBorder .inner .contents table tbody tr {
+#sectionBoarder-list .inner .contents table tbody tr {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-#sectionBorder .inner .contents table tbody tr.list {
-  cursor: pointer;
-}
-#sectionBorder .inner .contents table tbody tr.list:hover {
-  background-color: orange;
-}
-#sectionBorder .inner .contents table tbody tr th:nth-of-type(1) {
+#sectionBoarder-list .inner .contents table tbody tr th:nth-of-type(1) {
   font-size: 1rem;
   font-weight: bold;
   width: 10%;
   border-right: 2px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr th:nth-of-type(2) {
+#sectionBoarder-list .inner .contents table tbody tr th:nth-of-type(2) {
   font-size: 1rem;
   font-weight: bold;
   width: 50%;
   border-right: 2px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr th:nth-of-type(3) {
+#sectionBoarder-list .inner .contents table tbody tr th:nth-of-type(3) {
   font-size: 1rem;
   font-weight: bold;
   width: 20%;
   border-right: 2px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr th:nth-of-type(4) {
+#sectionBoarder-list .inner .contents table tbody tr th:nth-of-type(4) {
   font-size: 1rem;
   font-weight: bold;
   width: 20%;
 }
-#sectionBorder .inner .contents table tbody tr td:nth-of-type(1) {
-  width: 10%;
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(1) {
+  width: 9.9%;
   border-right: 1px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr td:nth-of-type(2) {
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(2) {
   width: 50%;
   text-align: left;
   border-right: 1px solid #707070;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-position: under;
+  color: aquamarine;
 }
-#sectionBorder .inner .contents table tbody tr td:nth-of-type(3) {
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(2):hover {
+  color: aqua;
+  font-weight: bold;
+}
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(3) {
   width: 20%;
   border-right: 1px solid #707070;
 }
-#sectionBorder .inner .contents table tbody tr td:nth-of-type(6) {
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(4) {
   width: 20%;
   word-break: break-all;
 }
+#sectionBoarder-list .inner .contents table tbody tr td:nth-of-type(5) {
+  display: none;
+}
+#sectionBoarder-list .inner .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+#sectionBoarder-list .inner .btn-wrap .write:hover {
+  opacity: 0.8;
+}
 
-#sectionBorder-write {
+#sectionBoarder-write {
   padding: 2.5rem 2.5rem;
   min-height: 0;
 }
-#sectionBorder-write .inner .contents .tit {
+#sectionBoarder-write .inner .contents .tit {
   font-size: 2.375rem;
   font-weight: bold;
   margin-bottom: 3.125rem;
   color: rgb(56, 202, 222);
 }
-#sectionBorder-write .inner .contents .btn-wrap {
+#sectionBoarder-write .inner .contents .btn-wrap {
   display: flex;
   justify-content: flex-end;
 }
-#sectionBorder-write .inner .contents .btn-wrap .regis {
+#sectionBoarder-write .inner .contents .btn-wrap .regis {
+  width: 5rem;
   margin-right: 0.625rem;
 }
-#sectionBorder-write .inner .contents .btn-wrap .regis:hover {
+#sectionBoarder-write .inner .contents .btn-wrap .regis:hover {
   opacity: 0.8;
 }
-#sectionBorder-write .inner .contents .btn-wrap .cancle:hover {
+#sectionBoarder-write .inner .contents .btn-wrap .cancle:hover {
   opacity: 0.8;
 }
-#sectionBorder-write .inner .contents .board-write-wrap {
+#sectionBoarder-write .inner .contents .board-write-wrap {
   margin-bottom: 2.5rem;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl {
+#sectionBoarder-write .inner .contents .board-write-wrap dl {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2.5rem 0;
   font-size: 1.25rem;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl dt {
+#sectionBoarder-write .inner .contents .board-write-wrap dl dt {
   width: 20%;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl dd {
+#sectionBoarder-write .inner .contents .board-write-wrap dl dd {
   width: 80%;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl dd input {
+#sectionBoarder-write .inner .contents .board-write-wrap dl dd input {
   width: 95%;
   background-color: #fff;
   color: #000;
@@ -1768,7 +1792,7 @@
   border-radius: 0.625rem;
   padding: 0.625rem;
 }
-#sectionBorder-write .inner .contents .board-write-wrap dl dd .input-cont {
+#sectionBoarder-write .inner .contents .board-write-wrap dl dd .input-cont {
   width: 95%;
   background-color: #fff;
   color: #000;
@@ -1778,52 +1802,52 @@
   font-size: 1.125rem;
 }
 
-#sectionBorder-modify {
+#sectionBoarder-modify {
   padding: 2.5rem 2.5rem;
   min-height: 0;
 }
-#sectionBorder-modify .inner .contents .tit {
+#sectionBoarder-modify .inner .contents .tit {
   font-size: 2.375rem;
   font-weight: bold;
   margin-bottom: 3.125rem;
   color: orange;
 }
-#sectionBorder-modify .inner .contents .btn-wrap {
+#sectionBoarder-modify .inner .contents .btn-wrap {
   display: flex;
   justify-content: flex-end;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .modify {
+#sectionBoarder-modify .inner .contents .btn-wrap .modify {
   margin-right: 0.625rem;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .modify:hover {
+#sectionBoarder-modify .inner .contents .btn-wrap .modify:hover {
   opacity: 0.8;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .del {
+#sectionBoarder-modify .inner .contents .btn-wrap .del {
   margin-right: 0.625rem;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .del:hover {
+#sectionBoarder-modify .inner .contents .btn-wrap .del:hover {
   opacity: 0.8;
 }
-#sectionBorder-modify .inner .contents .btn-wrap .cancle:hover {
+#sectionBoarder-modify .inner .contents .btn-wrap .cancle:hover {
   opacity: 0.8;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap {
+#sectionBoarder-modify .inner .contents .board-read-wrap {
   margin-bottom: 2.5rem;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2.5rem 0;
   font-size: 1.25rem;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dt {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dt {
   width: 20%;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dd {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dd {
   width: 80%;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dd input {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dd input {
   width: 95%;
   background-color: #fff;
   color: #000;
@@ -1832,11 +1856,11 @@
   border-radius: 0.625rem;
   padding: 0.625rem;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-name {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dd .input-name {
   background-color: #fff;
   opacity: 0.6;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-cont {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dd .input-cont {
   width: 95%;
   background-color: #fff;
   color: #000;
@@ -1845,7 +1869,7 @@
   height: 12.5rem;
   font-size: 1.125rem;
 }
-#sectionBorder-modify .inner .contents .board-read-wrap dl dd .input-password {
+#sectionBoarder-modify .inner .contents .board-read-wrap dl dd .input-password {
   background-color: #fff;
   opacity: 0.6;
 }
@@ -1959,6 +1983,7 @@ select::-ms-expand {
   background-color: #707070;
   padding: 0.625rem;
   font-size: 1.125rem;
+  text-align: center;
 }
 
 tr {
@@ -1996,7 +2021,7 @@ td {
   position: relative;
   font-size: 1rem;
   background-color: #707070;
-  padding: 0.125rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 1.25rem;
   cursor: pointer;
 }
