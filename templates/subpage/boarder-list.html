@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <title>DOF - Doo One Friends</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- wrap [s] -->
+    <div id="wrap">
+
+        <!-- header [s] -->
+        <header id="header" class="main-header">
+            <div class="inner header-inner">
+                <h1 class="logo"><a href="http://localhost:5000"></a></h1>
+                <ul class="menu-list">
+                    <li class="menu-btn"><a href="http://localhost:5000">HOME</a></li>
+                    <li class="menu-btn"><a href="{{url_for('intro')}}">INTRO</a></li>
+                    <li class="menu-btn"><a href="{{url_for('member')}}">MEMBER</a></li>
+                    <li class="menu-btn"><a href="{{url_for('boarder_list')}}">BORDER</a></li>
+                </ul>
+                <button type="button" class="btn btn-gnb"><i class="ic ic-gnb-open"></i></button>
+            </div>
+            <nav id="gnb">
+                <button type="button" class="btn btn-gnb-close"><i class="ic ic-gnb-close"></i></button>
+                <ul class="gnb-list">
+                    <li><a href="http://localhost:5000" class="txt">HOME</a></li>
+                    <li><a href="{{url_for('intro')}}" class="txt">INTRO</a></li>
+                    <li><a href="{{url_for('member')}}" class="txt">MEMBER</a></li>
+                    <li><a href="{{url_for('boarder_list')}}" class="txt">BORDER</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- header [e] -->
+
+        <main id="container" class="main-cont">
+            <!-- sectionMain [s] -->
+            <section class="main-section" id="sectionBoarder-list">
+                <div class="inner">
+                    <div class="contents">
+                        <h2 class="tit">게 시 판</h2>
+                        <!-- data 가져오기 -->
+                        {% if datas|length > 0 %}
+                        <table class="table-wrap">
+                            <tr class="top">
+                                <th>No.</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                            </tr>
+                            <!-- 반복되는 구간 -->
+                            {% for data in datas %}
+                            <tr class="list">
+                                <td>{{loop.index}}</td>
+                                <td><a class="title" href="{{url_for('board_modify', idx=data._id , page=page)}}">{{data.title}}</a>
+                                </td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.pubdate|formatdatetime}}</td>
+                                <td class="password">{{data.password}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <!-- 페이징 처리 [s]-->
+                        <div class="pg">
+                            {% if block_start - 1 > 0 %}
+                            <a href="{{url_for('boarder_list', page=block_start - 1)}}" class="pg-btn">[이전]</a>
+                            {% endif %}
+
+                            {% for i in range(block_start, block_last + 1) %}
+
+                            {% if i > last_page_num %}
+                            <span class="empty_page pg-btn">{{ i }}</span>
+                            {% else %}
+                            {% if i == page %}
+                            <span class="current_page pg-btn">{{ i }}</span>
+                            {% else %}
+                            <a href="{{url_for('boarder_list', page=i)}}" class="pg-btn">{{ i }}</a>
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if block_last < last_page_num %} <a
+                                href="{{url_for('boarder_list', page=block_last + 1)}}" class="pg-btn">[다음]</a>
+                                {% endif %}
+
+                                {% else %}
+                                <h3 class="non-data">데이터가 없습니다.</h3>
+                                {% endif %}
+                        </div>
+                        <!-- 페이징 처리 [e]-->
+                        <div class="btn-wrap">
+                            <button class="btn write"><a href="{{url_for('board_write')}}">글쓰기</a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- sectionMain [e] -->
+        </main>
+
+        <!-- footer[s] -->
+        <footer id="footer" class="main-footer">
+            <div class="inner">
+                <p class="copy-logo">
+                    <a href="http://localhost:5000"><i class="ic ic-logo"></i></a>
+                </p>
+                <p class="copy-txt">
+                    <span class="txt">COPYRIGHT © DOF(Doo One Friends).ALL RIGHTS RESERVED.</span>
+                    <a href="{{url_for('service')}}" class="txt-link">이용약관</a>
+                </p>
+            </div>
+        </footer>
+        <!-- //footer[e] -->
+
+    </div>
+    <!-- wrap [e] -->
+
+    <!-- script [s]-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/jquery-3.6.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/jquery-ui.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/swiper.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/common.js')}}"></script>
+    <script>
+        $(document).ready(() => {
+            boarderClick();
+        })
+    </script>
+    <!-- script [e]-->
+
+</body>
+
+</html>
