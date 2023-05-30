@@ -1,9 +1,7 @@
-import math
-from flask import Flask, render_template, request, jsonify, send_file
-
+from flask import Flask, render_template, request, jsonify
 from bson.objectid import ObjectId
-
 from pymongo import MongoClient
+import math
 
 client = MongoClient("mongodb+srv://kmanpysev20:test@cluster0.cknzfkt.mongodb.net/test")
 db = client.DOFBorder
@@ -19,9 +17,9 @@ def home():
 def delete():   
     id_receive = request.form["id_give"]
     id_receive = ObjectId(id_receive)
-    db.Border.delete_one({'_id':id_receive})
+    db.Border1.delete_one({'_id':id_receive})
     return jsonify({"msg": "삭제 완료!"})
-    
+
 # 수정하는 코드
 @app.route('/modify', methods=["POST"])
 def modify():
@@ -30,38 +28,25 @@ def modify():
 
     title_receive = request.form["title_give"]
     content_receive = request.form["content_give"]
-    db.Border.update_one({'_id' : id_receive}, {'$set':{'title' : title_receive}})
-    db.Border.update_one({'_id' : id_receive}, {'$set':{'content' : content_receive}})
+    db.Border1.update_one({'_id' : id_receive}, {'$set':{'title' : title_receive}})
+    db.Border1.update_one({'_id' : id_receive}, {'$set':{'content' : content_receive}})
     return jsonify({"msg": "수정 완료!"})
 
+# border.html 소스
+@app.route("/borderlist", methods=["GET"])
+def borderlist():
+    # page의 값 (값이 없는 경우 기본값은 1)
+    page = request.args.get('page', 1 , type=int)
+    # 한 페이지당 몇 개의 게시물을 출력하는 코드
+    limit = request.args.get('limit', 5 , type=int)
 
-# 각 리스트 ID 값 저장하는 코드
-# @app.route("/borderlist", methods=["GET"])
-# def borderlist():
-#     contents = list(db.Border.find({}))
-#     for content in contents:
-#         content['_id'] = str(content['_id'])
-#     return jsonify({"result": contents})
-
-@app.route("/boardlist", methods=['GET'])
-def boardlist():
-    page = request.args.get('page', 1, type=int)
-    limit = 5
-    contents = db.Border.find({}).skip((page - 1)*limit).limit(limit)
-	
-    tot_count = db.Border.find({}).count()
-    last_page_num = math.ceil(tot_count / limit)
-    
-    lists = []
+    # Object형식을 json에 필요한 str형식으로 바꿔주기 위한 decode (_id 값 찾는 코드)
+    # contents 변수는 전체 data를 가져옴
+    contents = list(db.Border1.find({}).skip((page-1) * limit).limit(limit))
     for content in contents:
-        content['_id'] = str(content['_id'])
-        lists.append(content)
-
-    return jsonify({'list': lists,
-                    'limit': limit,
-                    'page': page,
-                    'result': contents,
-                    'last_page_num': last_page_num})
+        content['_id'] = str(content['_id'])                    
+    return jsonify({"result": contents,
+                    })
 
 # 데이터 저장하기 코드
 @app.route('/post', methods=["POST"])
@@ -78,9 +63,9 @@ def post():
         'password' : password_receive,
         'ymd' : ymd_receive
     }
-    db.Border.insert_one(doc)
+    db.Border1.insert_one(doc)
     return jsonify({"msg": "등록 완료!"})
 
 if __name__ == "__main__":
-    # app.run(debug=True, port=5000)
-    app.run()
+    app.run(debug=True, port=9999)
+    # app.run()

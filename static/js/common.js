@@ -35,6 +35,8 @@ function borderlist() {
             let password = row['password'];
             let ymd = row['ymd'];
             let _id = row['_id'];
+            console.log(index);
+
             let temp_html = `<tr class="list">
                             <td>${idSum}</td>
                             <td>${title}</td>
@@ -45,6 +47,7 @@ function borderlist() {
                             <td style="display:none;">${_id}</td>
                             </tr>`
             $('.table-wrap').append(temp_html);
+
         })
         $('.table-wrap').on('click', '.list', function () {
             const row = $(this).find('td');
@@ -64,10 +67,9 @@ function listClick(row) {
     console.log(password)
 
     let promPasss = prompt('비밀번호룰 입력하세요', '숫자만 입력');
-    let passNum = Number(promPasss);
-    console.log(passNum);
+    console.log(promPasss);
 
-    if(passNum === password) {
+    if(promPasss === password) {
         $(location).attr("href",
         `../subpage/border-modify.html?
     ymd=${encodeURIComponent(ymd)}
@@ -77,7 +79,7 @@ function listClick(row) {
     &password=${encodeURIComponent(password)}
     &_id=${encodeURIComponent(_id)}`)
     } else {
-        alert("실행불가")
+        alert("비밀번호가 틀리거나 취소를 하였습니다.")
     }
 }
 

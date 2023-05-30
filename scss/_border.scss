@@ -32,6 +32,8 @@
                 margin-bottom : rem(40);
                 display : flex;
                 justify-content: center;
+                height: rem(600);
+                overflow: auto;
                 tbody {
                     width: 100%;
                     tr {
