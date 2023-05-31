@@ -25,8 +25,27 @@ function isRegist() {
 //border 등록
 function borderlist() {
     fetch("/borderlist").then(res => res.json()).then(data => {
-        let rows = data['result'];
-        // $('.list').empty();
+        let rows = data['contents'];
+
+        let totcount = data['totcount'];
+        let page = data['page'];
+        let limit = data['limit'];
+        let last_page_num = data['last_page_num'];
+        let block_size = data['block_size'];
+        let block_num = data['block_num'];
+        let block_start = data['block_start'];
+        let block_last = data['block_last'];
+
+        let total = ["총게시물의 개수 = " + totcount, 
+        "page의 값 (값이 없는 경우 기본값은 1) = " + page, 
+        "한 페이지당 몇 개의 게시물 = " + limit , 
+        "마지막 페이지의 수 = " + last_page_num , 
+        "페이지 블록 표시 = " + block_size , 
+        "현재 블록의 위치 = " +  block_num , 
+        "블럭의 시작 위치 = " + block_start , 
+        "블럭의 끝 위치 = " + block_last]
+        console.log(total);
+
         rows.forEach((row, index) => {
             let idSum = index + 1;
             let title = row['title'];
@@ -35,7 +54,6 @@ function borderlist() {
             let password = row['password'];
             let ymd = row['ymd'];
             let _id = row['_id'];
-            console.log(index);
 
             let temp_html = `<tr class="list">
                             <td>${idSum}</td>
@@ -53,6 +71,13 @@ function borderlist() {
             const row = $(this).find('td');
             listClick(row)
         });
+
+        total.forEach((totals) => {
+            let page = totals['page'];
+
+            let page_html = ``
+            $('.pg').append(page_html);
+        })
     })
 }
 

@@ -40,12 +40,38 @@ def borderlist():
     # 한 페이지당 몇 개의 게시물을 출력하는 코드
     limit = request.args.get('limit', 5 , type=int)
 
+    # 게시물의 총 갯수
+    totcount = db.Border1.count_documents({})
+
+    # 마지막 페이지의 수를 구함
+    last_page_num = math.ceil(totcount / limit)
+
+    # 페이지 블록 표시
+    block_size = 5 
+    
+    # 현재 블록의 위치
+    block_num = int((page - 1) / block_size)
+
+    # 블럭의 시작 위치
+    block_start = int((block_size * block_num) + 1)
+
+    # 블럭의 끝 위치
+    block_last = math.ceil(block_start + (block_size - 1))
+
     # Object형식을 json에 필요한 str형식으로 바꿔주기 위한 decode (_id 값 찾는 코드)
     # contents 변수는 전체 data를 가져옴
     contents = list(db.Border1.find({}).skip((page-1) * limit).limit(limit))
     for content in contents:
-        content['_id'] = str(content['_id'])                    
-    return jsonify({"result": contents,
+        content['_id'] = str(content['_id'])
+    return jsonify({"contents": contents,
+                    "totcount" : totcount,
+                    "page" : page,
+                    "limit" : limit,
+                    "last_page_num" : last_page_num,
+                    "block_size" : block_size, 
+                    "block_num" : block_num,
+                    "block_start" : block_start,
+                    "block_last" : block_last,
                     })
 
 # 데이터 저장하기 코드
@@ -67,5 +93,5 @@ def post():
     return jsonify({"msg": "등록 완료!"})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=9999)
+    app.run(debug=True, port=5000)
     # app.run()
