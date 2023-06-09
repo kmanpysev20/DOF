@@ -7,16 +7,15 @@
                 font-size: rem(38);
                 font-weight: bold;
                 margin-bottom: rem(50);
-
-
             }
-            .pagenation {
-                a {
-                    padding : rem(10);
-                    &:hover {
-                        font-weight: bold;
-                        color : orange;
-                    }
+            .pg {
+                margin-bottom: rem(20);
+                .pg-btn {
+                    padding : rem(0) rem(10);
+                }
+                .current {
+                    font-weight: 800;
+                    color : aqua
                 }
             }
             .btn-wrap {

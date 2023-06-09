@@ -35,8 +35,8 @@ def modify():
 # border.html 소스
 @app.route("/borderlist", methods=["GET"])
 def borderlist():
-    # page의 값 (값이 없는 경우 기본값은 1)
-    page = request.args.get('page', 1 , type=int)
+    # 현재 페이지의 위치
+    current_page = request.args.get('current_page', 1 , type=int)
     # 한 페이지당 몇 개의 게시물을 출력하는 코드
     limit = request.args.get('limit', 5 , type=int)
 
@@ -50,7 +50,7 @@ def borderlist():
     block_size = 5 
     
     # 현재 블록의 위치
-    block_num = int((page - 1) / block_size)
+    block_num = int((current_page - 1) / block_size)
 
     # 블럭의 시작 위치
     block_start = int((block_size * block_num) + 1)
@@ -60,12 +60,12 @@ def borderlist():
 
     # Object형식을 json에 필요한 str형식으로 바꿔주기 위한 decode (_id 값 찾는 코드)
     # contents 변수는 전체 data를 가져옴
-    contents = list(db.Border1.find({}).skip((page-1) * limit).limit(limit))
+    contents = list(db.Border1.find({}).skip((current_page-1) * limit).limit(limit))
     for content in contents:
         content['_id'] = str(content['_id'])
     return jsonify({"contents": contents,
                     "totcount" : totcount,
-                    "page" : page,
+                    "current_page" : current_page,
                     "limit" : limit,
                     "last_page_num" : last_page_num,
                     "block_size" : block_size, 

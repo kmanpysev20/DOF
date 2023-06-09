@@ -1,3 +1,7 @@
+$(document).ready(() => {
+    borderlist();
+})
+
 //글쓰기 조건 코드
 function isRegist() {
     //제목란에 값이 없다면 팝업 노출 시키고 return false라 아래 작성자명 if문으로 가지 않음
@@ -28,7 +32,7 @@ function borderlist() {
         let rows = data['contents'];
 
         let totcount = data['totcount'];
-        let page = data['page'];
+        let current_page = data['current_page'];
         let limit = data['limit'];
         let last_page_num = data['last_page_num'];
         let block_size = data['block_size'];
@@ -36,13 +40,13 @@ function borderlist() {
         let block_start = data['block_start'];
         let block_last = data['block_last'];
 
-        let total = ["총게시물의 개수 = " + totcount, 
-        "page의 값 (값이 없는 경우 기본값은 1) = " + page, 
-        "한 페이지당 몇 개의 게시물 = " + limit , 
-        "마지막 페이지의 수 = " + last_page_num , 
-        "페이지 블록 표시 = " + block_size , 
-        "현재 블록의 위치 = " +  block_num , 
-        "블럭의 시작 위치 = " + block_start , 
+        let total = ["총게시물의 개수 = " + totcount,
+        "현재 페이지의 위치 (값이 없는 경우 기본값은 1) = " + current_page,
+        "한 페이지당 몇 개의 게시물 = " + limit,
+        "마지막 페이지의 수 = " + last_page_num,
+        "페이지 블록 표시 = " + block_size,
+        "현재 블록의 위치 = " + block_num,
+        "블럭의 시작 위치 = " + block_start,
         "블럭의 끝 위치 = " + block_last]
         console.log(total);
 
@@ -71,14 +75,26 @@ function borderlist() {
             const row = $(this).find('td');
             listClick(row)
         });
+        for (let i = block_start; i <= last_page_num; i++) {
+            console.log(i)
 
-        total.forEach((totals) => {
-            let page = totals['page'];
-
-            let page_html = ``
-            $('.pg').append(page_html);
-        })
+            if (i === current_page) {
+                let page_html = `<a class="pg-btn current" href="../subpage/border.html?current_page=${i}">${i}</a>`
+                $('.pg').append(page_html);
+            } else {
+                let page_html = `<a class="pg-btn" href="../subpage/border.html?current_page=${i}">${i}</a>`
+                $('.pg').append(page_html);
+                $('.pg').on('click', '.pg-btn' , function() {
+                    updatePage(current_page)
+                })
+            }
+        }
     })
+}
+
+//페이지 갱신
+function updatePage(page) {
+    
 }
 
 //border 게시물 클릭
@@ -94,9 +110,9 @@ function listClick(row) {
     let promPasss = prompt('비밀번호룰 입력하세요', '숫자만 입력');
     console.log(promPasss);
 
-    if(promPasss === password) {
+    if (promPasss === password) {
         $(location).attr("href",
-        `../subpage/border-modify.html?
+            `../subpage/border-modify.html?
     ymd=${encodeURIComponent(ymd)}
     &title=${encodeURIComponent(title)}
     &writer=${encodeURIComponent(writer)}
@@ -149,42 +165,42 @@ function modifylist() {
     $(".input-name").val(writer).attr("id", _id);
     $(".input-cont").val(content).attr("id", _id);
     $(".input-password").val(password).attr("id", _id);
-  
+
     return _id;
-  }
+}
 
 function modifyBorder(_id) {
     let title = $(".input-tit").val();
     let content = $(".input-cont").val();
-  
+
     console.log("_id : " + _id);
     console.log("타이틀: " + title);
     console.log("작성자 : " + content);
-  
+
     let formData = new FormData();
     formData.append("id_give", _id);
     formData.append("title_give", title);
     formData.append("content_give", content);
-  
+
     fetch("/modify", { method: "POST", body: formData })
-      .then((res) => res.json())
-      .then((data) => {
-        alert(data["msg"]);
-        $(location).attr("href", "../subpage/border.html");
-      });
-  }
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data["msg"]);
+            $(location).attr("href", "../subpage/border.html");
+        });
+}
 //글수정 삭제
 function deleteBorder(_id) {
     let formData = new FormData()
     formData.append("id_give", _id)
 
     fetch('/delete', { method: "POST", body: formData })
-    .then((res) => res.json())
-    .then((data) => {
-        alert(data["msg"]);
-        $(location).attr("href", "../subpage/border.html")
-        // window.location.reload()
-    })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data["msg"]);
+            $(location).attr("href", "../subpage/border.html")
+            // window.location.reload()
+        })
 }
 
 

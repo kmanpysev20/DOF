@@ -1644,12 +1644,15 @@
   font-weight: bold;
   margin-bottom: 3.125rem;
 }
-#sectionBorder .inner .contents .pagenation a {
-  padding: 0.625rem;
+#sectionBorder .inner .contents .pg {
+  margin-bottom: 1.25rem;
 }
-#sectionBorder .inner .contents .pagenation a:hover {
-  font-weight: bold;
-  color: orange;
+#sectionBorder .inner .contents .pg .pg-btn {
+  padding: 0rem 0.625rem;
+}
+#sectionBorder .inner .contents .pg .current {
+  font-weight: 800;
+  color: aqua;
 }
 #sectionBorder .inner .contents .btn-wrap {
   display: flex;
